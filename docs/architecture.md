@@ -1,56 +1,35 @@
 ---
 keyPoints: >-
-  The main package composes a pinned CLI with skills and continuation policy.
-  The CLI owns shared data, Web and execution coordination; one server hosts both.
+  chill-agent is a skill; chill-agent-cli is the program. The skill's cli.json
+  names the CLI, and the starter hands it the skill's location. The CLI owns
+  setup, data, Web and every built-in extension.
 ---
 
-# Two repositories, one server
-
-The all-in-one package depends on one exact CLI release archive. `npm run build`
-assembles a self-contained runtime from the CLI package's public runtime export and
-adds the monitor module and command manifest. The runtime runs one Web server.
+# A skill and a CLI
 
 | Responsibility | Owner |
 | --- | --- |
-| Goal data, Briefs, Conversation and Letters | CLI |
-| Web interface, native delivery, execution locks and queue/pause observations | CLI |
-| Trusted extension hosting and common Web controls | CLI |
-| Skills, package composition and continuation decisions | Main package |
-| Request wording, attempt allowance and result journal | Main package |
-| Notification profiles, browser subscriptions, Root switches and receipts | Main package |
-| Public-link panel, QR, saved public On/Off policy | Main package |
-
-The dependency points from this package to the CLI. The monitor imports the
-versioned public extension API; it does not own the CLI's internal files.
-Standalone CLI users can bring a different policy without installing this one.
+| Outcome, feedback and decision guidance for the agent | chill-agent skill |
+| Which CLI to run (`cli.json`) | chill-agent skill |
+| Setup, Goal data, Briefs, Conversation and Letters | CLI |
+| Web, native delivery and execution coordination | CLI |
+| AutoContinue, notifications, public link, first-use session and host guides | CLI built-in extensions |
+| Following a changed `cli.json` on Web start or the update button | CLI |
 
 ```mermaid
 flowchart LR
-  A[Skills and continuation policy] --> B[Public CLI contract]
+  A[Skill + cli.json] -- npx package --> B[CLI setup]
   B --> C[Goal data and Web]
-  B --> D[Assigned agent chat]
+  B --> D[Agent conversation]
+  C -- reads SKILL.md --> A
 ```
 
-The [AutoContinue guide](using/auto-continue.md) owns the policy explanation.
-The [Notifications guide](using/notifications.md) explains optional alerts;
-its policy sends selected saved events through Web Push, or retains a configured
-host-tool route. Pending test sends delay idle shutdown; enablement alone does
-not. Public-link and browser-notification panels are trusted extension assets;
-the CLI supplies their common panel, routes and connector lifetime.
-The CLI owns [extension mechanics](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/extensions.md)
+The two repositories share only two contracts, both defined by the CLI: the
+`package` value is passed to npx unchanged, and `setup prepare --version-file`
+records where `cli.json` lives. The CLI does not know how it was installed or
+how the skill is arranged; it uses the guide location that setup recorded.
+
+Standalone CLI users get the same built-in extensions and can disable them. The
+CLI owns [extension mechanics](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/extensions.md)
 and [server lifetime](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/runtime/server.md).
-The extension tells that host when its work still needs it: active, unresolved
-or potentially eligible work can delay idle shutdown; enablement alone is not
-a permanent keep-alive. An observation failure does not establish that work ended.
-
-Existing data remains in the same directory. The continuation journal keeps its
-path and attempt IDs. Legacy per-Root launchd jobs are retired when the extension
-starts. No monitor is enabled by installation or migration.
-
-Source history before extraction is retained locally; public repositories start
-with reviewed distribution source, without local research notes or personal data.
-
-See [build layout](development/build-and-plugins.md) for the generated artifacts
-and [cross-repository development](development/two-repositories.md) for changing
-the combination. Exact dependency selection lives in [package.json](../package.json)
-and its lockfile, not in an independently maintained version table.
+See [Change the skill and choose its CLI](development/skill-and-cli.md) for development.

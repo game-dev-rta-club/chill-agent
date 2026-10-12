@@ -1,16 +1,16 @@
 ---
 keyPoints: >-
-  Install one complete built chill-agent skill folder for either host, then invoke
-  it in the target project. The agent checks tools, prepares an initial Goal and
-  opens Web. Missing tools and native activation receive specific instructions.
+  Install the chill-agent skill folder for either host, then invoke it in the
+  target project. Its starter fetches the CLI named in cli.json with npx and runs
+  setup. The agent prepares an initial Goal and opens Web. Pulling a changed
+  cli.json switches Web to that CLI.
 ---
 
 # Install and invoke the skill
 
-Install the complete **`dist/skills/chill-agent`** folder from a built package,
-including `scripts/start.mjs` and `scripts/runtime.json`. The skill does not
-contain the application or node_modules. Its manifest selects an exact official
-application commit; the starter installs it with npm on first invocation.
+Install the complete **`chill-agent`** skill folder, including `cli.json` and
+`scripts/start.mjs`. It contains no application code or node_modules. `cli.json`
+names the CLI; the starter fetches it with npx on first invocation.
 Do not copy SKILL.md alone.
 
 | Host | Personal skill location | Project-local alternative |
@@ -34,8 +34,8 @@ the skill does not silently move their Goals to a different project.
 
 The first invocation follows this sequence:
 
-1. **Check this computer.** The agent checks Node.js 24.15+, npm and Git before
-   downloading the fixed application. It also checks `cloudflared`, which is
+1. **Check this computer.** The agent checks Node.js 24.15+ and npm, plus Git when
+   `cli.json` names a commit, before downloading the CLI. It also checks `cloudflared`, which is
    needed for a phone or public link. If a tool is missing or unusable, it explains
    what it does and asks before installing or repairing it. You can choose local
    use without cloudflared. Installing it does not turn on public access.
@@ -63,54 +63,34 @@ the **same conversation** after Hook review. The agent explains this only when
 needed; copying files alone cannot establish that connection.
 See [Claude reception](claude-code.md) for how replies reach an idle conversation.
 
-## Stable release
+## Get the folder
 
-Download **chill-agent-skill-0.4.0.tgz** from [release v0.4.0](https://github.com/game-dev-rta-club/chill-agnet/releases/tag/v0.4.0).
-Extract it and install the complete `chill-agent/` folder using the locations
-above. This is a thin skill: its manifest pins the release's exact application
-commit. On first invocation, npm acquires and builds that commit with the fixed
-CLI input. Later invocations reuse the project-specific installation.
-
-The separate `game-dev-rta-club-chill-agent-0.4.0.tgz` asset is the npm-installable
-application archive, with its composed runtime, the same thin skill and bundled
-compatibility plugins. This is a GitHub archive distribution, not an npm registry
-package.
-
-For a fixed development checkout, maintainers can run `npm ci` and
-`npm run check:development` with Node.js 24 to build `dist/skills/chill-agent`.
-A source-only copy without a generated runtime.json is incomplete. Existing plugin artifacts remain
-available for compatibility. See [build layout](../development/build-and-plugins.md).
+Download **chill-agent-skill-<version>.tgz** from the
+[releases](https://github.com/game-dev-rta-club/chill-agnet/releases), extract
+it and install the `chill-agent/` folder using the locations above. A clone of
+this repository works too: the folder is
+`plugins/chill-agent/skills/chill-agent/`, used as it is without a build.
 
 Official host references: [Codex skills](https://learn.chatgpt.com/docs/build-skills)
 and [Claude Code skills](https://code.claude.com/docs/en/skills).
 
-## Development installs and updates
+## Where the CLI lives and how it updates
 
-Both 0.4.0 release and development builds emit a thin skill. The starter uses npm to install the
-full app at the immutable Git commit in runtime.json, including its pinned CLI
-and locked dependencies. No npm registry release or version bump is required
-for this development path. First installation builds the package and may take
-a few minutes. Later runs reuse the installed copy without a network request.
+The starter passes the `package` value in `cli.json` to npx unchanged. It is
+normally a CLI release archive URL, or a pushed CLI commit while a team tries an
+unreleased version. npm builds a commit on first install, which can take about a
+minute; later runs reuse npm's cache. Setup copies the CLI into the project's
+data store and remembers where `cli.json` is. Nothing is written to the project's
+Git tree, and data and settings stay where they are.
 
-Installations live under `~/.chill-agent/installations/<project-hash>/<pin-hash>/`,
-outside the project Git tree. The project identity is its resolved absolute
-folder; pass `--project` for preparation and run guide commands from that folder.
-Data, settings and existing runtime snapshots stay in their existing locations.
-Updating the skill does not restart Web, migrate data, or silently update an
-existing conversation. Keep node_modules and installations out of Git.
+When a pull or skill reinstall changes `cli.json`, the next Web start fetches
+and prepares that CLI before starting. A Web that is already open on the
+supported macOS setup shows an update icon in its top menu. Click it to see
+“再起動すると新しいバージョンになります。” Choose **OK** to prepare the new
+version and restart at the same page, or **キャンセル** to keep the current one.
+If preparation fails, the current Web keeps running. Public links, foreground
+servers and Windows do not offer this restart button. A program rollback does
+not undo a database migration.
 
-When a pull or skill installation changes the selected application commit,
-the **local Web** on the supported macOS setup shows an update icon in its top
-menu. Click it to see “再起動すると新しいバージョンになります。” Choose **OK**
-to prepare the new version and restart at the same page, or **キャンセル** to
-keep using the current version. If preparation fails, the current Web stays
-running. Detection does not download anything or change another project.
-
-This feature needs an update-capable runtime and one invocation of its installed
-standalone skill to remember the skill's location. Older running versions need
-the existing explicit runtime update once before they can show this icon.
-Public links, foreground servers and Windows do not offer this restart button.
-The icon follows the installed skill's fixed commit; it does not search GitHub
-for releases. A program rollback does not undo a database migration.
-
-See [runtime acquisition](../development/runtime-acquisition.md) for the design.
+See the CLI [version file contract](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/runtime/version-file.md)
+for the details.

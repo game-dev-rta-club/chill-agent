@@ -26,7 +26,7 @@ jobs:
           git merge-base --is-ancestor HEAD origin/main
       - run: npm pack
       - name: Package standalone skill
-        run: tar -czf "chill-agent-skill-${GITHUB_REF_NAME#v}.tgz" -C dist/skills chill-agent
+        run: tar -czf "chill-agent-skill-${GITHUB_REF_NAME#v}.tgz" -C plugins/chill-agent/skills chill-agent
       - run: gh release create "$GITHUB_REF_NAME" *.tgz --verify-tag --generate-notes
         env:
           GH_TOKEN: ${{ github.token }}

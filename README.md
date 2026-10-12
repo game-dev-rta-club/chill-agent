@@ -36,24 +36,25 @@ that project's workspace and opens its Web page; there is no separate setup
 command for you to run.
 
 The same folder works in **Codex Desktop** and **Claude Code (experimental connection)** on macOS.
-Node.js 24.15 or newer, npm and Git are required; first use needs network access. See
-[Install the skill](docs/using/install.md) for locations and how to obtain the
-built folder. Initial native Hook approval may still be required; Claude may
+Node.js 24.15 or newer and npm are required (Git too while `cli.json` names a
+CLI commit); first use needs network access. The skill fetches the CLI named in
+its `cli.json` with npx. See [Install the skill](docs/using/install.md) for
+locations and how to obtain the folder. Initial native Hook approval may still be required; Claude may
 also need to resume the same conversation to activate its connection. The agent
 explains only the remaining native step.
 
-Optional [notifications](docs/using/notifications.md),
-[phone access](docs/using/public-link.md) and color themes live in the Web's
+Optional [notifications](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/using/notifications.md),
+[phone access](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/using/public-link.md) and color themes live in the Web's
 **More** menu. Installation does not enable them.
 
 Next, see [how to work together](docs/using/working-together.md), or find a focused guide in [the documentation](docs/README.md).
 
-For the experimental Claude Code connection, see [setup](docs/development/claude-plugin.md)
-and [receiving Web feedback](docs/using/claude-code.md).
+For the experimental Claude Code connection, see
+[receiving Web feedback](docs/using/claude-code.md).
 
 ## Building your own workflow?
 
-Use [chill-agent-cli](https://github.com/game-dev-rta-club/chill-agent-cli) if you want the workspace and agent connection with your own scheduling or orchestration. Its repository owns the CLI reference and extension documentation.
+Use [chill-agent-cli](https://github.com/game-dev-rta-club/chill-agent-cli) if you want the workspace and agent connection with your own scheduling or orchestration. It runs every chill-agent feature by itself; this repository adds the skill. Its repository owns the CLI reference and extension documentation.
 
 ## Help make it better
 
