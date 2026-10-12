@@ -25,9 +25,10 @@ export function npmScript(command,{platform=process.platform,node=process.execPa
  const script=join(dirname(node),'node_modules','npm','bin',`${command}-cli.js`);
  return exists(script)?script:null;
 }
+// Only npm's .cmd shims need a shell on Windows; git.exe starts directly.
 function run(command,args,options){
  const script=npmScript(command);
- return script?spawnSync(process.execPath,[script,...args],options):spawnSync(command,args,{...options,shell:process.platform==='win32'});
+ return script?spawnSync(process.execPath,[script,...args],options):spawnSync(command,args,{...options,shell:process.platform==='win32'&&['npm','npx'].includes(command)});
 }
 
 // Report every missing tool at once; installing them stays the user's decision.
