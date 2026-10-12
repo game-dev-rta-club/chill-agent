@@ -36,8 +36,8 @@ npm run check:install
 `check` validates skill metadata, links and reachability, the `cli.json` shape and
 the starter's arguments. `check:install` needs network access: it runs the starter
 in a disposable project and home directory, lets npx fetch the selected CLI and
-completes setup, with Claude Code setup on macOS and Codex setup on Windows,
-where the CLI does not qualify Claude hooks. CI runs both checks on both systems.
+completes setup. CI runs `check` on macOS and Windows, and `check:install` on
+macOS, the only system where CLI setup is supported.
 
 ## Select a CLI
 
