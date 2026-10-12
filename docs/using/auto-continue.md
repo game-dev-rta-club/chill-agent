@@ -18,7 +18,7 @@ shared by its children. A root must have an assigned chat.
 Installation does not turn monitoring on.
 
 This guide describes the supported Codex integration. The development-only
-[Claude Stop-hook route](../development/claude-auto-mode.md) has separate commands
+[Claude Stop-hook route](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/development/claude-auto-mode.md) has separate commands
 and qualification limits; these Web controls do not yet configure it.
 
 The Agent menu also keeps the compact AutoContinue switch. Header

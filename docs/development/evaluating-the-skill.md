@@ -84,7 +84,6 @@ A small Q&A exercise checks proposed decisions, not real tool execution or a
 statistical success rate. Without a comparison condition, it also cannot measure
 how much improvement the skill caused.
 
-Finally validate metadata and reference links, rebuild and compare the shipped
-skill with the source, and run the repository checks. Follow
-[build and plugin layout](build-and-plugins.md) for the separate installation
-step; a successful build does not replace the skill already loaded in a chat.
+Finally validate metadata and reference links and run the repository checks
+described in [Skill and CLI](skill-and-cli.md). A source edit does not replace the
+skill already loaded in a chat; reinstall or reload it there.

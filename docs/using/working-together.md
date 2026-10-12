@@ -61,7 +61,7 @@ The available controls depend on the connected harness and CLI version. Pausing
 work and disabling [AutoContinue](auto-continue.md) serve different purposes:
 one interrupts or holds work, while the other prevents future automatic checks.
 
-Use **More** to set [notifications](notifications.md) or [phone access](public-link.md).
+Use **More** to set [notifications](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/using/notifications.md) or [phone access](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/using/public-link.md).
 Each can be enabled independently; no separate setup skill is needed.
 Local use needs neither.
 

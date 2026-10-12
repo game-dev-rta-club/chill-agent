@@ -12,11 +12,11 @@ that conversation and shows its saved replies. Keep the computer awake and the
 receiving Claude conversation running when you leave the terminal for your phone.
 Opening Web alone does not start Claude.
 
-This is an experimental development connection. Follow the
-[Claude plugin setup](../development/claude-plugin.md) to prepare the project,
-review its native hooks and connect a new Goal. Loading a plugin alone does not
-complete setup or grant tool permissions. Your installed version's setup help
-is the source for supported options.
+This is an experimental development connection. [Install the skill](install.md)
+and invoke `/chill-agent`; the agent prepares the project, asks you to review its
+native hooks and connects a new Goal. Installing the skill alone does not complete
+setup or grant tool permissions. Your installed version's setup help is the
+source for supported options.
 
 ## Before leaving the computer
 
@@ -56,5 +56,5 @@ missing waiter needs recovery; refreshing Web does not start reception.
 
 Keep the saved message until its receipt and reply are confirmed. If the cause
 is unclear, retain its event ID and report the startup method and connection
-state. The agent's [native connection guide](../../extensions/harnesses/claude-code.mjs)
+state. The agent's [native connection guide](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/extensions/harnesses/claude-code.mjs)
 covers inbox recovery and confirmed receipts.
