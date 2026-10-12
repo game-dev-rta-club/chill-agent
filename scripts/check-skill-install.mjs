@@ -5,7 +5,7 @@
 import {spawnSync} from 'node:child_process';
 import {mkdtemp,mkdir,readFile,realpath,rm} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
-import {join} from 'node:path';
+import {dirname,join} from 'node:path';
 import {fileURLToPath} from 'node:url';
 
 const skill=fileURLToPath(new URL('../plugins/chill-agent/skills/chill-agent/',import.meta.url));
@@ -24,7 +24,10 @@ try{
  const expected=JSON.parse(await readFile(join(skill,'cli.json'),'utf8')).package;
  if(setup.package!==expected)throw Error(`Setup prepared ${setup.package}, expected ${expected}.`);
  if(!/session start --harness claude-code/.test(setup.next))throw Error('Setup did not name session start as the next step.');
- const help=spawnSync(setup.entry,['connection','--help'],{encoding:'utf8',shell:process.platform==='win32'});
+ // PowerShell and cmd use chill.cmd on Windows; the sh entry is for Git Bash and macOS.
+ const help=process.platform==='win32'
+  ?spawnSync('cmd.exe',['/d','/s','/c',`""${join(dirname(setup.entry),'chill.cmd')}" connection --help"`],{encoding:'utf8',windowsVerbatimArguments:true})
+  :spawnSync(setup.entry,['connection','--help'],{encoding:'utf8'});
  if(help.status!==0)throw Error(`The prepared entry does not run: ${help.stderr}`);
  console.log(`Skill install check passed: ${expected}`);
 }finally{await rm(dir,{recursive:true,force:true});}

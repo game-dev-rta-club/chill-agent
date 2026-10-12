@@ -35,7 +35,7 @@ then invoke **chill-agent** in the project you want to work on. The agent prepar
 that project's workspace and opens its Web page; there is no separate setup
 command for you to run.
 
-The same folder works in **Codex Desktop** and **Claude Code (experimental connection)** on macOS.
+The same folder works in **Codex Desktop** on macOS and in **Claude Code (experimental connection)** on macOS and Windows.
 Node.js 24.15 or newer and npm are required (Git too while `cli.json` names a
 CLI commit); first use needs network access. The skill fetches the CLI named in
 its `cli.json` with npx. See [Install the skill](docs/using/install.md) for

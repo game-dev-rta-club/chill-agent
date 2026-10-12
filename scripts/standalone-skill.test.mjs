@@ -4,7 +4,7 @@ import {mkdtemp,mkdir,writeFile,readFile,rm} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {setupArguments,missingTools} from '../plugins/chill-agent/skills/chill-agent/scripts/start.mjs';
+import {setupArguments,missingTools,npmScript} from '../plugins/chill-agent/skills/chill-agent/scripts/start.mjs';
 
 const skill=fileURLToPath(new URL('../plugins/chill-agent/skills/chill-agent/',import.meta.url));
 
@@ -30,4 +30,12 @@ test('missing tools are reported together; Git is needed only for a git-based CL
  assert.deepEqual(missingTools('https://example.com/cli.tgz',{version:'24.15.0',probe:all}),[]);
  assert.deepEqual(missingTools('https://example.com/cli.tgz',{version:'24.14.9',probe:none}),['Node.js 24.15 or later','npm']);
  assert.deepEqual(missingTools('github:org/cli#abc',{version:'25.0.0',probe:command=>command!=='git'}),['Git (cli.json selects a git commit)']);
+});
+
+test('npm and npx run through Node on Windows only, so no shell splits the arguments',()=>{
+ const node=join(tmpdir(),'node js','node.exe'),npx=join(tmpdir(),'node js','node_modules','npm','bin','npx-cli.js');
+ assert.equal(npmScript('npx',{platform:'darwin',node,exists:()=>true}),null);
+ assert.equal(npmScript('npx',{platform:'win32',node,exists:path=>path===npx}),npx);
+ assert.equal(npmScript('git',{platform:'win32',node,exists:()=>true}),null);
+ assert.equal(npmScript('npm',{platform:'win32',node,exists:()=>false}),null,'without npm beside Node, the shell is used as before');
 });
