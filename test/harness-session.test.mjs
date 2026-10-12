@@ -20,8 +20,7 @@ for(const harness of ['codex-desktop','claude-code'])for(const running of [true,
    calls.push(args);assert.equal(options.cwd,await realpath(project));assert.equal(options.env.PORT,undefined);assert.equal(options.env.KEEP,'yes');
    if(args[0].endsWith('chill-setup.mjs')){
     assert.equal(options.env.CHILL_AGENT_DATA_DIR,undefined);
-    if(args[1]==='status')return {stdout:JSON.stringify({idleWatchMs:60000})};
-    assert.deepEqual(args.slice(1),['prepare','--isolated','--project',await realpath(project),'--harness',harness,...(harness==='claude-code'?['--idle-watch-ms','60000']:[])]);
+    assert.deepEqual(args.slice(1),['prepare','--isolated','--project',await realpath(project),'--harness',harness]);
     return {stdout:JSON.stringify({launcher:'stable',dataDirectory:'/selected',command:'stable-prefix',url:'http://127.0.0.1:51234',next:'legacy setup instructions'})};
    }
    assert.equal(options.env.CHILL_AGENT_DATA_DIR,'/selected');

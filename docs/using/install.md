@@ -61,7 +61,7 @@ CLI's `/hooks` command is available in Desktop. See the official
 Claude needs a verified SessionStart handoff and may require exiting and resuming
 the **same conversation** after Hook review. The agent explains this only when
 needed; copying files alone cannot establish that connection.
-See [Claude reception](claude-code.md) for its finite idle-watch limitation.
+See [Claude reception](claude-code.md) for how replies reach an idle conversation.
 
 ## Stable release
 
