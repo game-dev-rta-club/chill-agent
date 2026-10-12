@@ -39,7 +39,7 @@ npm run check:install
 
 Run focused tests while developing, then the full check before your pull request.
 `check:install` needs network access; it fetches the CLI named in `cli.json` and
-runs setup in a disposable directory. CI also runs the checks on Windows; that
+runs setup in a disposable directory on macOS. CI also runs `check` on Windows; that
 is not a promise of a Windows Desktop integration.
 
 See [Skill and CLI](docs/development/skill-and-cli.md) before editing the skill
