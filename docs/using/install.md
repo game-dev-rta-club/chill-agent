@@ -48,8 +48,8 @@ The first invocation follows this sequence:
    clickable link. It says what you can do next in plain language. If opening is
    unavailable, it provides the link without claiming to have opened it.
 
-The first download needs network access. Automatic Web startup currently requires
-macOS and a supported host. Native tool access and Hook approval remain under
+The first download needs network access. Automatic Web startup requires a supported
+host on macOS, or Claude Code on Windows. Native tool access and Hook approval remain under
 your host's control. If activation prevents Goal creation, the agent opens the
 workspace page first, explains what is still needed and gives one concrete
 action. A running Web is not proof that replies are connected.

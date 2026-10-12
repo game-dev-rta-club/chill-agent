@@ -23,7 +23,5 @@ jobs:
       - run: npm run release:check
       - run: npm ci
       - run: npm run check
-      # CLI setup supports macOS only; Windows checks the skill and cli.json.
       - name: Install the CLI from cli.json through the skill starter
-        if: runner.os == 'macOS'
         run: npm run check:install

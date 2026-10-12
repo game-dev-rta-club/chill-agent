@@ -3,7 +3,7 @@
 // the CLI selected by ../cli.json set up the project. Everything after setup,
 // including Web and the first Goal, belongs to that CLI.
 import {spawnSync} from 'node:child_process';
-import {readFileSync} from 'node:fs';
+import {existsSync,readFileSync} from 'node:fs';
 import {dirname,join,resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
 
@@ -18,8 +18,20 @@ export function setupArguments({harness,project,skillDirectory=skill}){
  return {spec,args:['-y',spec,'setup','prepare','--isolated','--project',resolve(project),'--harness',harness,'--version-file',versionFile,'--agent-guide',join(skillDirectory,'SKILL.md')]};
 }
 
+// Windows cannot start npm's .cmd shims without a shell, which would split
+// paths with spaces; run npm's own scripts with this Node there instead.
+export function npmScript(command,{platform=process.platform,node=process.execPath,exists=existsSync}={}){
+ if(platform!=='win32'||!['npm','npx'].includes(command))return null;
+ const script=join(dirname(node),'node_modules','npm','bin',`${command}-cli.js`);
+ return exists(script)?script:null;
+}
+function run(command,args,options){
+ const script=npmScript(command);
+ return script?spawnSync(process.execPath,[script,...args],options):spawnSync(command,args,{...options,shell:process.platform==='win32'});
+}
+
 // Report every missing tool at once; installing them stays the user's decision.
-export function missingTools(spec,{version=process.versions.node,probe=command=>spawnSync(command,['--version'],{encoding:'utf8',shell:process.platform==='win32'}).status===0}={}){
+export function missingTools(spec,{version=process.versions.node,probe=command=>run(command,['--version'],{encoding:'utf8'}).status===0}={}){
  const [major,minor]=version.split('.').map(Number),missing=[];
  if(major<24||major===24&&minor<15)missing.push('Node.js 24.15 or later');
  if(!probe('npm'))missing.push('npm');
@@ -34,7 +46,7 @@ if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
   const {spec,args:npx}=setupArguments({harness:values['--harness'],project:values['--project']||process.cwd()});
   const missing=missingTools(spec);
   if(missing.length)throw Error(`Install before continuing: ${missing.join(', ')}. Explain each tool's purpose to the user and ask before installing.`);
-  const result=spawnSync('npx',npx,{stdio:'inherit',shell:process.platform==='win32'});
+  const result=run('npx',npx,{stdio:'inherit'});
   process.exitCode=result.status??1;
  }catch(error){console.error(error.message);process.exitCode=1;}
 }
