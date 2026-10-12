@@ -44,9 +44,9 @@ Goals, Briefs and Conversation use the shared workspace commands. Feedback uses
 `connection activity`, not Codex's Queue/deferred receipt. `goal work` and live
 execution controls remain unavailable on this native route.
 
-Auto mode is a separate opt-in extension. The optional idle watch is finite; its
-expiry does not renew it. Neither plugin loading nor project setup enables Auto
-mode or promises overnight reception. See [native Auto mode](claude-auto-mode.md)
+Auto mode is a separate opt-in extension. Replies after a response reach the
+conversation through the CLI reply waiter while it runs. Neither plugin loading
+nor project setup enables Auto mode or promises overnight reception. See [native Auto mode](claude-auto-mode.md)
 and the [CLI setup contract](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/agent/claude-setup.md)
 for the current limits.
 

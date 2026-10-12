@@ -49,9 +49,9 @@ consumes the allowance for that revision; comments, results and Off/On toggles
 do not create another allowance. Substantive Goal, Brief or user-input changes
 can create the next one after the preceding attempt is resolved.
 
-An optional finite feedback watcher shares Stop ownership with this route. A
-continuation cancels its old checkpoint. A feedback offer that wins first blocks
-Auto mode until processed. The continued prompt receives new Web replies at its
+Saved Web feedback detected by the CLI reply waiter stays pending until the inbox
+claims it, so a pending reply makes Auto mode abstain at Stop. A continuation
+removes its old checkpoint. The continued prompt receives new Web replies at its
 next ordinary tool hook, preserving uncertain-offer deduplication.
 
 ## Reproduce the native check

@@ -58,7 +58,7 @@ Use `node bin/chill.mjs setup --help` to prepare a project from a built checkout
 Codex is the default. For experimental native Claude project hooks, select
 `setup prepare --harness claude-code --project /absolute/project`; use the
 [CLI setup guide](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/agent/claude-setup.md)
-for activation, finite idle watch and removal. A settings write is not evidence
+for activation and removal. A settings write is not evidence
 that a conversation is connected. Building alone installs no native hooks.
 
 The core plugin contains the runtime. Notifications and phone access are

@@ -6,7 +6,6 @@ import {join} from 'node:path';
 import {randomUUID} from 'node:crypto';
 import {captureClaudeEntry} from '../lib/claude-entry.mjs';
 import {requestClaudeAction,handleClaudeToolHook,collectClaudeHookFeedback,handleClaudeStopExtensions} from '../lib/claude-actions.mjs';
-import {startClaudeIdleWatch,pollClaudeIdleWatch} from '../lib/claude-idle.mjs';
 import {listGoals,createGoal,appendFeedback,updateGoal} from '../lib/goal-store.mjs';
 import {readDeliveryState} from '../lib/delivery.mjs';
 import {readMonitor} from '../lib/continuation-monitor.mjs';
@@ -83,18 +82,17 @@ test('an uncertain attempt in one Root does not create a second continuation in 
  await f.action('extension',{extension:'continuation',operation:'configure',input:{rootId:other.id,enabled:true}});await f.stop();await f.newPrompt();await f.configure();
  assert.equal(await f.stop(),null);assert.equal((await readMonitor(other.id)).attempts.length,0);
 });
-test('the idle feedback watcher and Auto mode cannot both claim the same Stop',async t=>{
- for(const winner of ['feedback','continuation'])await t.test(winner,async t=>{
-  const f=await fixture(t);await f.configure();const input=f.event('Stop');
-  await collectClaudeHookFeedback(input,{cwd:f.cwd});const {ticket}=await startClaudeIdleWatch(input,{cwd:f.cwd});assert(ticket);
-  if(winner==='feedback'){
-   await appendFeedback({goalId:f.root.id,text:'Native watcher got here first'});
-   assert.equal((await pollClaudeIdleWatch(ticket)).status,'offered');
-   assert.equal(await handleClaudeStopExtensions(input,{cwd:f.cwd}),null);assert.equal((await f.read()).attempts.length,0);
-  }else{
-   assert.equal((await handleClaudeStopExtensions(input,{cwd:f.cwd})).decision,'block');
-   const reply=await appendFeedback({goalId:f.root.id,text:'Input after continuation won'});
-   assert.equal((await pollClaudeIdleWatch(ticket)).status,'inactive');assert.equal(await readDeliveryState(reply.changeId),null,'cancelled watcher leaves input for ordinary tools');
-  }
+test('saved Web feedback and Auto mode cannot both claim the same Stop',async t=>{
+ // The reply waiter only detects saved feedback; a pending delivery makes Auto mode abstain.
+ await t.test('feedback first',async t=>{
+  const f=await fixture(t);await f.configure();
+  await appendFeedback({goalId:f.root.id,text:'Saved before the response ended'});
+  assert.equal(await f.stop(),null);assert.equal((await f.read()).attempts.length,0);
+ });
+ await t.test('continuation first',async t=>{
+  const f=await fixture(t);await f.configure();
+  assert.equal((await f.stop()).decision,'block');
+  const reply=await appendFeedback({goalId:f.root.id,text:'Input after continuation won'});
+  assert.equal(await readDeliveryState(reply.changeId),null,'the reply stays saved for the inbox');
  });
 });
