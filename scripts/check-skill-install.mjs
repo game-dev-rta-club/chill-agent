@@ -19,6 +19,8 @@ try{
  const env={...process.env,HOME:home,USERPROFILE:home,npm_config_cache:join(dir,'npm-cache')};
  for(const key of ['CHILL_AGENT_DATA_DIR','CHILL_AGENT_HARNESS','CHILL_AGENT_SESSION_ID','CHILL_AGENT_CONNECTION_GENERATION','PORT'])delete env[key];
  const result=spawnSync(process.execPath,[join(skill,'scripts/start.mjs'),'--harness','claude-code','--project',project],{env,encoding:'utf8',timeout:10*60*1000,maxBuffer:16*1024*1024});
+ // A timeout reports itself, not as a later cleanup error.
+ if(result.error)throw Error(`Starter did not finish: ${result.error.message}`);
  if(result.status!==0)throw Error(`Starter failed (${result.status}):\n${result.stderr}`);
  const setup=JSON.parse(result.stdout);
  const expected=JSON.parse(await readFile(join(skill,'cli.json'),'utf8')).package;
@@ -30,4 +32,7 @@ try{
   :spawnSync(setup.entry,['connection','--help'],{encoding:'utf8'});
  if(help.status!==0)throw Error(`The prepared entry does not run: ${help.stderr}`);
  console.log(`Skill install check passed: ${expected}`);
-}finally{await rm(dir,{recursive:true,force:true});}
+}finally{
+ // npm's git clone can stay locked for a moment on Windows; cleanup must not hide the result.
+ await rm(dir,{recursive:true,force:true,maxRetries:10,retryDelay:500}).catch(error=>console.error(`Cleanup left ${dir}: ${error.code}`));
+}
