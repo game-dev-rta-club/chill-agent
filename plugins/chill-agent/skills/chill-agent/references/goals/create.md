@@ -34,6 +34,5 @@ Use the verified connection interface for Root creation and its confirmation
 requirements. Establish a missing connection before attempting that operation. Children and ordinary updates use the shared
 `goal create --help` or `goal update --help`. Put the destination in the
 title, observable success in the criteria, and the work currently agreed in the
-scope. Share proposals and progress in Conversation; publish the Deliverable only
-for the Goal's final output. Recording it preserves understanding; it does not
+scope. Share proposals and progress in Conversation. Recording it preserves understanding; it does not
 supply missing implementation permission.
