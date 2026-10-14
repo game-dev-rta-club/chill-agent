@@ -23,10 +23,10 @@ benefits from its own discussion or independent progress. Small tasks can stay
 in your working plan.
 
 On first invocation without a stated outcome, the selected interface's
-`onboarding.initialGoal` provides a discovery Goal and Brief. Create that shared
-place before asking the first question; its scope is discussion, not arbitrary
+`onboarding.initialGoal` provides a discovery Goal and its welcome message. Create
+that shared place before asking the first question; its scope is discussion, not arbitrary
 development. Ask the missing outcome in a Letter there. When the user replies,
-revise this same Goal's title, scope, criteria and Brief rather than finishing a
+revise this same Goal's title, scope and criteria rather than finishing a
 setup Goal and starting another. If the invocation already describes an outcome,
 use it from the start and ask only what is still consequentially unclear.
 
@@ -34,6 +34,6 @@ Use the verified connection interface for Root creation and its confirmation
 requirements. Establish a missing connection before attempting that operation. Children and ordinary updates use the shared
 `goal create --help` or `goal update --help`. Put the destination in the
 title, observable success in the criteria, and the work currently agreed in the
-scope. Keep the developing explanation in the Brief and share the proposal or
-result in Conversation. Recording it preserves understanding; it does not
+scope. Share proposals and progress in Conversation; publish the Deliverable only
+for the Goal's final output. Recording it preserves understanding; it does not
 supply missing implementation permission.

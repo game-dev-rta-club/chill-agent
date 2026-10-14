@@ -8,7 +8,7 @@ keyPoints: >-
 
 The useful outcome is a clear current agreement and work moving under it.
 Read the supplied context and messages in order, including later corrections.
-An annotation needs its original question or Brief version to make sense;
+An annotation needs its original question or Deliverable version to make sense;
 acknowledgement, a suggestion and approval can have different effects. A
 correction or stop applies now. The Goal where a comment arrived does not by
 itself require switching tasks.
@@ -28,7 +28,8 @@ not block the same deliverable: a provisional local artifact can preserve
 progress when only a reversible detail is undecided. Record the assumption and
 what an answer would change. Do not infer missing permission from silence.
 
-Reflect changed agreement in the Goal or Brief and deliver requested outcomes
+Reflect changed agreement in the Goal, update the Deliverable when the final
+output changes, and deliver requested outcomes
 in Comments. Use a Letter only when a user reply, choice or permission is needed.
 A reply may close a Letter's Web item automatically. Before a manual close,
 check whether further input is needed; closure does not prove authorization or

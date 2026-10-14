@@ -61,8 +61,8 @@ required. Native trust remains the user's decision.
 
 Do not give the user a setup command list. An incomplete installation needs the
 complete skill folder with its `cli.json`, not a different harness or another CLI.
-Prepare the initial Goal and Brief from the supplied outcome, or the interface's
-discovery starter when the user only asks to begin. Open that page using the host
+Prepare the initial Goal from the supplied outcome, or the interface's discovery
+starter and welcome when the user only asks to begin. Open that page using the host
 browser tool before asking a question or ending the turn. If native activation
 prevents creation, open the workspace URL first and explain the required action
 using the interface's short message. If opening fails, supply the clickable URL.

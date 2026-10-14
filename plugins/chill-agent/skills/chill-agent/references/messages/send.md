@@ -7,8 +7,8 @@ keyPoints: >-
 # Send a message
 
 Use a Letter only when the user needs to answer, choose or grant permission.
-Use a Comment for requested findings, completed artifacts and progress; keep
-the current explanation in the Brief. Do not turn a report into a question or
+Use a Comment for requested findings, completed artifacts and progress; publish
+the Goal's final output in the Deliverable. Do not turn a report into a question or
 ask for acknowledgement just to leave a Letter open.
 
 Lead with the result, evidence, artifact link and limitations needed to use it.
@@ -27,7 +27,7 @@ to their actual dependencies.
 
 Save beside the Goal with `goal letter --title ...` or `goal comment`, using
 `--text-file` for longer messages and installed help for syntax. Verify the saved
-event. Keep the current explanation in the Brief; saving a message changes
+event. Plans and progress stay in Conversation; saving a message changes
 neither work selection nor Goal completion.
 
 For a saved Letter, use `settings notice --id <goal> --event <event>` with the

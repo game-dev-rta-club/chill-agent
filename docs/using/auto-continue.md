@@ -38,7 +38,7 @@ or manual pause. Uncertain state also waits. The host checks again just before
 sending, so a newly queued message can prevent the automatic request.
 
 The monitor allows **one request per meaningful change**. User feedback and
-substantive Goal or Brief changes create a new allowance
+substantive Goal or Deliverable changes create a new allowance
 after any unresolved request is accounted for. Ordinary agent comments,
 heartbeats, identical saves and internal no-work results do not.
 
@@ -62,7 +62,7 @@ on remaining entrusted work. Results belong in Comments. If a next step needs a 
 asks in a Letter with a concrete proposal and recommendation. It does not turn
 a report into a Letter or treat reporting as a reason to stop. There is no second request to
 repeat that review.
-It opens a relevant Goal through the compact context view, then follows Brief
+It opens a relevant Goal through the compact context view, then follows Deliverable
 and question links as needed. User acknowledgement is not a condition for
 continuing. The request does not expand the agreement or override a later
 Off setting or manual pause.
@@ -81,7 +81,7 @@ remain in Activity; Off does not erase them. The redundant AutoContinue History
 view is no longer shown.
 
 “No work reported” is the agent's report, not proof of project completion.
-Actual work and decisions belong in the usual Brief, Comment or Letter. A
+Actual work and decisions belong in the usual Deliverable, Comment or Letter. A
 no-work result returns through the monitor's internal command without posting
 another Web message that could disturb a resting project.
 
