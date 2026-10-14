@@ -78,7 +78,7 @@ instructions alone.
 ## Report what the exercise establishes
 
 Keep prompts, raw answers, judgments and revision reasons in the work record;
-share the useful conclusions in the Goal's Brief. Distinguish repeated questions
+share the useful conclusions in the Goal's Deliverable. Distinguish repeated questions
 from unseen scenarios. Report the number of trials and any unresolved mistakes.
 A small Q&A exercise checks proposed decisions, not real tool execution or a
 statistical success rate. Without a comparison condition, it also cannot measure

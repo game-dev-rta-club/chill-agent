@@ -39,9 +39,9 @@ The first invocation follows this sequence:
    needed for a phone or public link. If a tool is missing or unusable, it explains
    what it does and asks before installing or repairing it. You can choose local
    use without cloudflared. Installing it does not turn on public access.
-2. **Prepare your first Goal.** If you supplied an outcome, its title and Brief
-   start with that request. If you just invoked the skill, the page starts with
-   “Let's decide what you want to achieve” and a short explanation. You answer
+2. **Prepare your first Goal.** If you supplied an outcome, its title starts
+   with that request. If you just invoked the skill, the page starts with
+   “Let's decide what you want to achieve” and a short welcome in Conversation. You answer
    the first question there, then the agent updates that same Goal as the
    direction becomes clear. It does not leave a separate setup Goal behind.
 3. **Open the page.** The agent opens Web with its browser tool and provides a

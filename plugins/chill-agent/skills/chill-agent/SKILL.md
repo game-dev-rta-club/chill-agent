@@ -26,8 +26,8 @@ permission still constrain the actions they concern.
 ## Keep the outcome and its delivery visible
 
 A **Goal** names an achievable change; its criteria say what will be true when
-it is reached. Tasks are your means. The **Brief** explains the current agreement
-and evidence. **Letters** ask for a necessary reply, choice or permission;
+it is reached. Tasks are your means. The **Deliverable** holds only the Goal's
+final output; plans and progress stay in Conversation. **Letters** ask for a necessary reply, choice or permission;
 **Comments** deliver results, completion reports and routine progress. Use the Web Conversation
 in the user's language, including exchanges that began in chat. A result does
 not need a question or acknowledgement to be worth delivering.
@@ -50,7 +50,7 @@ Another guide is for a different action, not a prerequisite reading chain.
 | Frame and record a new outcome | [Create a Goal](references/goals/create.md) |
 | Regroup outcomes so the work is easy to understand | [Reorganize Goals](references/goals/reorganize.md) |
 | Assess and record completion | [Complete a Goal](references/goals/complete.md) |
-| Update the current explanation | [Update the Brief](references/briefs/update.md) |
+| Publish the Goal's final output | [Update the Deliverable](references/deliverables/update.md) |
 | Deliver a result, question or ordinary reply | [Send a message](references/messages/send.md) |
 | Receive feedback or resume interrupted work | [Receive feedback](references/work/receive-feedback.md) |
 | Continue autonomously and review whether to stop | [Continue autonomously](references/auto-mode/continue.md) |

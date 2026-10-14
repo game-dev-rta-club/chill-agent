@@ -53,7 +53,7 @@ for that separate development topic.
 ```text
 Web feedback → CLI delivery → current context + packaged Skill entry
 AutoContinue → observed facts + filtered index + auto-mode/continue.md
-Agent → selected action guide → work → Brief / Comment / Letter
+Agent → selected action guide → work → Deliverable / Comment / Letter
 ```
 
 Setup records the entry (`SKILL.md`) that the starter passes. The CLI uses that
@@ -66,7 +66,7 @@ without a guide keeps a minimal generic handoff. AutoContinue's scheduling,
 reservation and pause handling remain independent of guidance text.
 
 `goal show --section context` uses the existing Goal reader. It retains scope,
-criteria, new input and question references while linking to Brief and Letter
+criteria, new input and question references while linking to Deliverable and Letter
 bodies. No second summary store or inferred completion state is involved.
 
 ## Verify the format, then evaluate behavior
