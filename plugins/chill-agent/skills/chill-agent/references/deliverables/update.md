@@ -1,39 +1,37 @@
 ---
 keyPoints: >-
-  The Deliverable holds only the Goal's final output: what it hands over. Plans,
-  progress and questions go to Conversation. Edit and publish the existing source.
+  The Deliverable holds only the Goal's final output, written in HTML so its
+  final form is concrete: mockups, diagrams, illustrations or the finished
+  document. Write it for a newcomer to the project, and rewrite instead of
+  appending. Plans, proposals, progress and questions go to Conversation.
 ---
 
 # Update the Deliverable
 
-Use this when the Goal's final output changes: the document, design, report or
-result the Goal hands over. Someone opening the Goal should find that output,
-not a plan or a progress log. While the work goes on, the Deliverable can be a
-draft of that output; keep it free of status notes and to-do lists.
+Use this when the Goal's final output changes.
 
-Plans, proposals, progress and questions belong in Conversation. The agreed
-destination, scope and success criteria belong in the Goal itself. Leave the
-Deliverable empty until there is output worth handing over.
+1. **Hold only this Goal's final output.** Plans, proposals, progress and
+   questions belong in Conversation. While the work goes on, a draft of the
+   output is fine. A separate output belongs in a SubGoal.
+2. **Write HTML from the start.** Do not use Markdown.
+3. **Show the final form as concretely as possible**, close to the output
+   itself rather than a description of it:
+   - a screen or feature: a mockup of the screen (static; scripts do not run)
+   - a mechanism or flow: a diagram
+   - a look or mood: an illustration or sample
+   - a document: that document in its finished form
+4. **Write so a 20-year-old who has just joined the project understands it.**
+   Explain the project's current state and its terms without assuming prior
+   knowledge. When a change matters, make the before and after easy to compare.
+5. **Rewrite the existing content instead of appending to it.** The Deliverable
+   shares only the image of the finished output; superseded parts do not stay.
+   Earlier versions remain in history.
 
-Read the current Deliverable and the feedback that changes it. Edit its existing
-source, rewriting superseded parts instead of appending conflicting versions.
-Lead with the output itself and include only the detail needed to use it. Link to
-concrete artifacts and evidence.
+Find the editable source with `goal deliverable path --id <ID> --format html`
+and publish it with `goal deliverable update --id <ID> --format html`. Editing
+the file alone does not change Web. Upload raster images through `goal image`
+and use its `/api/images/<id>` URL; inline SVG works directly. Link other Goals
+with `/#/goal/<ID>`. Installed help describes the command details.
 
-Write new and revised Deliverables as standalone HTML. Use `goal deliverable path
---id <ID> --format html` to find its editable source, then publish with `goal
-deliverable update --id <ID> --format html`. When the current Deliverable is
-Markdown, carry its content into that HTML source; leave historical versions
-intact. An edited local file alone does not change Web. Verify the saved version
-before claiming the Deliverable has been updated.
-
-Use readable headings, paragraphs and responsive tables or diagrams where they
-help. Keep the project's established colors and visual tone. HTML is isolated
-from the workspace: scripts and forms do not run. Upload raster images through
-`goal image` and use its `/api/images/<id>` URL; inline SVG also supports image
-annotations. Internal Goal links use `/#/goal/<ID>` so they resolve outside the
-Deliverable document's URL. Installed help describes the command details.
-
-Deliverable history preserves previous versions. Use a Comment to point out the
-meaningful change. A publication neither completes a Goal nor substitutes for
-that reply.
+Point out a meaningful change in a Comment. Publishing neither completes the Goal
+nor replaces that reply.

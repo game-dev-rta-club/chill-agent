@@ -26,7 +26,7 @@ or explicit wait limited to the action it affects; silence supplies no consent.
 Before ending, review the next action as well as the usable result. If agreed
 work can advance, carry it forward. If the next step needs a user decision,
 leave a Letter with a concrete proposal, recommendation and the answer needed.
-Report results in a Comment and keep the Deliverable's final output current. Sending a report is
+Report results in a Comment, and [update the Deliverable](../deliverables/update.md) when the final output changes. Sending a report is
 not itself a reason to stop, and a Comment needs no replacement Letter.
 Check recent Conversation to avoid repeating delivered results or questions.
 When the agreed outcome is achieved, or the user explicitly wants an observation

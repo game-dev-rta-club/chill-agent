@@ -28,7 +28,7 @@ not block the same deliverable: a provisional local artifact can preserve
 progress when only a reversible detail is undecided. Record the assumption and
 what an answer would change. Do not infer missing permission from silence.
 
-Reflect changed agreement in the Goal, update the Deliverable when the final
+Reflect changed agreement in the Goal, [update the Deliverable](../deliverables/update.md) when the final
 output changes, and deliver requested outcomes
 in Comments. Use a Letter only when a user reply, choice or permission is needed.
 A reply may close a Letter's Web item automatically. Before a manual close,
