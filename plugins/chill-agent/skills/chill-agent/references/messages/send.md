@@ -1,7 +1,8 @@
 ---
 keyPoints: >-
   Deliver what the user needs to receive, with enough context to use or decide.
-  Letters ask for necessary replies; Comments carry results and progress.
+  Letters ask for necessary replies; Comments carry results and progress. One
+  message per response: questions that come with a reply go at its end.
 ---
 
 # Send a message
@@ -15,6 +16,11 @@ For a real decision, explain the next proposed action, your recommendation and
 what the answer changes. Check recent Conversation, including answered and
 closed Letters, to avoid repeating either a report or an existing question.
 A result already delivered in a Comment needs no replacement Letter.
+
+Send one message per response. The user reads the newest message first and can
+miss one above it, so when a reply to feedback also needs an answer, put the
+questions at the end of that reply instead of sending a separate Letter. Use a
+Letter for a question that stands on its own.
 
 For a consequential choice that belongs to the user, investigate available facts
 and prepare enough authorized work to make your recommendation concrete. Explain
