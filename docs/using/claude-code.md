@@ -2,7 +2,7 @@
 keyPoints: >-
   Claude runs on your computer while Web delivers feedback to the same conversation.
   Keep one receiver open with its reply waiter running, and recover Saved messages
-  without resending them. This experimental connection does not start Claude from Web.
+  without resending them. This connection does not start Claude from Web.
 ---
 
 # Use Web with Claude Code
@@ -12,7 +12,7 @@ that conversation and shows its saved replies. Keep the computer awake and the
 receiving Claude conversation running when you leave the terminal for your phone.
 Opening Web alone does not start Claude.
 
-This is an experimental development connection. [Install the skill](install.md)
+[Install the skill](install.md)
 and invoke `/chill-agent`; the agent prepares the project, asks you to review its
 native hooks and connects a new Goal. Installing the skill alone does not complete
 setup or grant tool permissions. Your installed version's setup help is the
