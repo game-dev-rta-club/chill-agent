@@ -66,7 +66,7 @@ See [Claude reception](claude-code.md) for how replies reach an idle conversatio
 ## Get the folder
 
 Download **chill-agent-skill-<version>.tgz** from the
-[releases](https://github.com/game-dev-rta-club/chill-agnet/releases), extract
+[releases](https://github.com/game-dev-rta-club/chill-agent/releases), extract
 it and install the `chill-agent/` folder using the locations above. A clone of
 this repository works too: the folder is
 `plugins/chill-agent/skills/chill-agent/`, used as it is without a build.

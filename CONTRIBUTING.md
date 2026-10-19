@@ -31,8 +31,8 @@ and Windows.
 This repository is the skill and its `cli.json`; there is nothing to build.
 
 ```sh
-git clone https://github.com/game-dev-rta-club/chill-agnet.git
-cd chill-agnet
+git clone https://github.com/game-dev-rta-club/chill-agent.git
+cd chill-agent
 npm ci
 npm run check
 npm run check:install

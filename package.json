@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/game-dev-rta-club/chill-agnet.git"
+    "url": "https://github.com/game-dev-rta-club/chill-agent.git"
   },
   "engines": {
     "node": ">=24.15"

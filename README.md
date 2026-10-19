@@ -6,7 +6,7 @@ keyPoints: >-
 
 <p align="center"><img src="assets/overview.svg" alt="chill-agent: agree on a goal, let the agent work, review the result" width="100%" /></p>
 
-<p align="center"><a href="https://github.com/game-dev-rta-club/chill-agnet/actions"><img alt="CI" src="https://github.com/game-dev-rta-club/chill-agnet/actions/workflows/ci.yml/badge.svg" /></a> <img alt="MIT License" src="https://img.shields.io/badge/license-MIT-green" /> <img alt="Node.js 24" src="https://img.shields.io/badge/node-24-339933" /></p>
+<p align="center"><a href="https://github.com/game-dev-rta-club/chill-agent/actions"><img alt="CI" src="https://github.com/game-dev-rta-club/chill-agent/actions/workflows/ci.yml/badge.svg" /></a> <img alt="MIT License" src="https://img.shields.io/badge/license-MIT-green" /> <img alt="Node.js 24" src="https://img.shields.io/badge/node-24-339933" /></p>
 
 # Work you can leave with an agent
 

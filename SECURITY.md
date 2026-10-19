@@ -19,7 +19,7 @@ contractual response or fix deadline.
 ## Report a vulnerability
 
 Do not open a public GitHub issue with vulnerability details. Use
-[GitHub private vulnerability reporting](https://github.com/game-dev-rta-club/chill-agnet/security/advisories/new).
+[GitHub private vulnerability reporting](https://github.com/game-dev-rta-club/chill-agent/security/advisories/new).
 Include:
 
 - The affected version, operating system, and component.
