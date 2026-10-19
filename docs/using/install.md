@@ -86,8 +86,8 @@ Git tree, and data and settings stay where they are.
 When a pull or skill reinstall changes `cli.json`, the next Web start fetches
 and prepares that CLI before starting. A Web that is already open on the
 supported macOS setup shows an update icon in its top menu. Click it to see
-“再起動すると新しいバージョンになります。” Choose **OK** to prepare the new
-version and restart at the same page, or **キャンセル** to keep the current one.
+“chill restarts with the new version.” Choose **OK** to prepare the new
+version and restart at the same page, or **Cancel** to keep the current one.
 If preparation fails, the current Web keeps running. Public links, foreground
 servers and Windows do not offer this restart button. A program rollback does
 not undo a database migration.
