@@ -15,16 +15,13 @@ part you want to understand:
 | Agree on work, leave feedback and review the result | [Work together](using/working-together.md) |
 | Receive Web feedback in an existing Claude conversation | [Use Web with Claude Code](using/claude-code.md) |
 | Let the agent check for work it can continue | [AutoContinue](using/auto-continue.md) |
-| Hear when results or decisions need your attention | [Notifications](using/notifications.md) |
-| Open the workspace on your phone or keep a fixed URL | [Public link](using/public-link.md) |
-| Understand why there are two repositories | [Architecture](architecture.md) |
-| Change a skill or inspect a built plugin | [Build and plugin layout](development/build-and-plugins.md) |
-| Extend host-specific setup and operation guidance | [Harness boundaries](development/harness-boundaries.md) |
+| Hear when results or decisions need your attention | [Notifications](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/using/notifications.md) |
+| Open the workspace on your phone or keep a fixed URL | [Public link](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/using/public-link.md) |
+| Understand what the skill and the CLI each own | [Architecture](architecture.md) |
+| Change the skill, check it or select its CLI | [Skill and CLI](development/skill-and-cli.md) |
 | Change action guides or agent handoffs | [Skill and handoffs](development/skill-and-handoffs.md) |
-| Try the shared skill in Claude Code | [Experimental Claude plugin](development/claude-plugin.md) |
-| Qualify continuation in a native Claude conversation | [Experimental Claude Auto mode](development/claude-auto-mode.md) |
 | Check whether skill guidance leads to useful decisions | [Evaluate the skill](development/evaluating-the-skill.md) |
-| Test a change across both repositories | [Develop across repositories](development/two-repositories.md) |
+| Try an unreleased CLI commit with this skill | [Use a development version](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/development/use-development-version.md) |
 | Choose branches, commit milestones and prepare a PR | [Development workflow](development/workflow.md) |
 | Publish an update | [Releasing](../RELEASING.md) |
 
@@ -32,10 +29,9 @@ For command formats, Goal storage, runtime updates or the extension API, use the
 [CLI documentation](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/README.md).
 Its installed `--help` describes the commands your version supports.
 
-These pages describe current source. The package pins a tested CLI release, so
-newer CLI screens can appear in a development checkout before a packaged update
-adopts them. [AutoContinue](using/auto-continue.md) identifies the relevant UI
-differences; changing documentation does not upgrade a running installation.
+These pages describe current source. The skill's `cli.json` selects the CLI, so
+newer CLI screens appear only after `cli.json` adopts them. Host setup, runtime
+behavior and extension internals are documented in the CLI repository.
 
 Public guides are tracked in Git. Older local investigations may be retained in
 an existing checkout, but are not published specifications or shipped features.

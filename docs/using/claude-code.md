@@ -1,8 +1,8 @@
 ---
 keyPoints: >-
   Claude runs on your computer while Web delivers feedback to the same conversation.
-  Keep one receiver open, check the finite watch, and recover Saved messages without
-  resending them. This experimental connection does not start Claude from Web.
+  Keep one receiver open with its reply waiter running, and recover Saved messages
+  without resending them. This connection does not start Claude from Web.
 ---
 
 # Use Web with Claude Code
@@ -12,19 +12,19 @@ that conversation and shows its saved replies. Keep the computer awake and the
 receiving Claude conversation running when you leave the terminal for your phone.
 Opening Web alone does not start Claude.
 
-This is an experimental development connection. Follow the
-[Claude plugin setup](../development/claude-plugin.md) to prepare the project,
-review its native hooks and connect a new Goal. Loading a plugin alone does not
-complete setup or grant tool permissions. Your installed version's setup help
-is the source for supported options.
+[Install the skill](install.md)
+and invoke `/chill-agent`; the agent prepares the project, asks you to review its
+native hooks and connects a new Goal. Installing the skill alone does not complete
+setup or grant tool permissions. Your installed version's setup help is the
+source for supported options.
 
 ## Before leaving the computer
 
 1. Check that the intended conversation is connected to the intended Goal.
 2. Send one message from its Web page and wait for a reply from that same
    conversation. A push notification alone does not verify this round trip.
-3. If you want reception between responses, explicitly configure the finite idle
-   watch during setup. Check its duration; it expires without automatic renewal.
+3. For reception between responses, the agent keeps a reply waiter running as a
+   Claude background task. chill's results ask it to start one when none runs.
 4. Resolve any required native tool approvals in Claude. Turn on
    [AutoContinue](auto-continue.md) only if you want autonomous continuation too.
    It neither grants tool permissions nor keeps a closed Claude process alive.
@@ -37,9 +37,8 @@ Automatic transfer between a background receiver and another CLI is not supporte
 
 After the receiver has ended, return to the original project folder and use
 `claude --resume` to select the same conversation. Retain the project's prepared
-hooks and plugin setup. Current development builds start the configured idle
-watch on normal resume without requiring an extra first message; older builds
-may not include that fix. Check your installed version before relying on it.
+hooks and plugin setup. A resumed conversation that owns Goals is asked to start
+its reply waiter again.
 
 Do not create a different conversation or Goal to recover the old one's input.
 A new conversation does not inherit the original context or connection.
@@ -49,13 +48,13 @@ A new conversation does not inherit the original context or connection.
 Saved means the message is stored but has not yet been received by the agent.
 Do not repeatedly send it or delete it to make the queue look clear.
 
-Check the original receiver: is Claude still running, is its finite watch still
-active, and is a native permission prompt waiting? Also check that you opened the
+Check the original receiver: is Claude still running, is its reply waiter still
+running, and is a native permission prompt waiting? Also check that you opened the
 connected conversation, rather than a new one. Resume or recover the inbox in
-that same conversation using the connection guide. A stopped receiver and an
-expired watch need recovery; refreshing Web does not start reception.
+that same conversation using the connection guide. A stopped receiver or a
+missing waiter needs recovery; refreshing Web does not start reception.
 
 Keep the saved message until its receipt and reply are confirmed. If the cause
 is unclear, retain its event ID and report the startup method and connection
-state. The agent's [native connection guide](../../extensions/harnesses/claude-code.mjs)
+state. The agent's [native connection guide](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/extensions/harnesses/claude-code.mjs)
 covers inbox recovery and confirmed receipts.

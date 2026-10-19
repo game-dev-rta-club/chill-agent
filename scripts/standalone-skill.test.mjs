@@ -1,21 +1,41 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {mkdtemp,mkdir,cp,writeFile,rm,readFile} from 'node:fs/promises';
+import {mkdtemp,mkdir,writeFile,readFile,rm} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
-import {pathToFileURL} from 'node:url';
-const source=new URL('../plugins/chill-agent/skills/chill-agent/scripts/start.mjs',import.meta.url);
-const pin={name:'@game-dev-rta-club/chill-agent',spec:'git+https://github.com/game-dev-rta-club/chill-agnet.git#'+'a'.repeat(40)};
-async function fixture(fn){const root=await mkdtemp(join(tmpdir(),'chill-install-'));try{const scripts=join(root,'skill/scripts');await mkdir(scripts,{recursive:true});await cp(source,join(scripts,'start.mjs'));await writeFile(join(scripts,'runtime.json'),JSON.stringify(pin));const api=await import(pathToFileURL(join(scripts,'start.mjs')));await fn(root,api);}finally{await rm(root,{recursive:true,force:true});}}
-async function fakeInstall(stage,p){const runtime=join(stage,'node_modules',p.name,'dist/runtime');await mkdir(join(runtime,'bin'),{recursive:true});await writeFile(join(runtime,'bin/chill-session.mjs'),'');await writeFile(join(runtime,'extensions.json'),'{}');}
-test('fixed installation reuses offline, isolates projects and versions',()=>fixture(async(root,api)=>{
- const project=join(root,'project'),other=join(root,'other');await mkdir(project);await mkdir(other);const options={project,cacheRoot:join(root,'cache')};let calls=0;const install=async(...args)=>{calls++;await fakeInstall(...args);};
- const a=await api.runtimeDirectory({...options,install});assert.equal(await api.runtimeDirectory({...options,install:()=>{throw Error('offline');}}),a);assert.equal(calls,1);
- assert.notEqual(await api.runtimeDirectory({...options,project:other,install}),a);
- await writeFile(join(root,'skill/scripts/runtime.json'),JSON.stringify({...pin,spec:pin.spec.replace(/a{40}$/,'b'.repeat(40))}));assert.notEqual(await api.runtimeDirectory({...options,install}),a);assert.equal(await readFile(join(a,'extensions.json'),'utf8'),'{}');
-}));
-test('failed installation is not published; concurrent installs converge',()=>fixture(async(root,api)=>{
- const options={project:root,cacheRoot:join(root,'cache')};await assert.rejects(api.runtimeDirectory({...options,install:async()=>{throw Error('network');}}),/network/);
- const [a,b]=await Promise.all([1,2].map(()=>api.runtimeDirectory({...options,install:fakeInstall})));assert.equal(a,b);
-}));
-test('moving or foreign pins are rejected',()=>fixture(async(root,api)=>{for(const spec of ['latest','git+https://github.com/game-dev-rta-club/chill-agnet.git#develop','git+https://evil.example/repo#'+'a'.repeat(40)])assert.throws(()=>api.validatePin({...pin,spec}),/immutable/);}));
+import {fileURLToPath} from 'node:url';
+import {setupArguments,missingTools,npmScript} from '../plugins/chill-agent/skills/chill-agent/scripts/start.mjs';
+
+const skill=fileURLToPath(new URL('../plugins/chill-agent/skills/chill-agent/',import.meta.url));
+
+test('the skill ships cli.json with exactly one npm package spec',async()=>{
+ const value=JSON.parse(await readFile(join(skill,'cli.json'),'utf8'));
+ assert.deepEqual(Object.keys(value),['package']);
+ assert.ok(typeof value.package==='string'&&value.package.trim()&&!/[\r\n]/.test(value.package));
+});
+
+test('the starter hands setup the version file and agent guide of its own skill',async t=>{
+ const dir=await mkdtemp(join(tmpdir(),'chill-starter-'));t.after(()=>rm(dir,{recursive:true,force:true}));
+ await mkdir(join(dir,'skill'));await writeFile(join(dir,'skill/cli.json'),JSON.stringify({package:'github:org/cli#abc'}));
+ const {spec,args}=setupArguments({harness:'claude-code',project:dir,skillDirectory:join(dir,'skill')});
+ assert.equal(spec,'github:org/cli#abc');
+ assert.deepEqual(args,['-y','github:org/cli#abc','setup','prepare','--isolated','--project',dir,'--harness','claude-code','--version-file',join(dir,'skill/cli.json'),'--agent-guide',join(dir,'skill/SKILL.md')]);
+ assert.throws(()=>setupArguments({harness:'unknown',project:dir,skillDirectory:join(dir,'skill')}),/calling harness/);
+ await writeFile(join(dir,'skill/cli.json'),'{}');
+ assert.throws(()=>setupArguments({harness:'codex-desktop',project:dir,skillDirectory:join(dir,'skill')}),/must name the CLI package/);
+});
+
+test('missing tools are reported together; Git is needed only for a git-based CLI',()=>{
+ const none=()=>false,all=()=>true;
+ assert.deepEqual(missingTools('https://example.com/cli.tgz',{version:'24.15.0',probe:all}),[]);
+ assert.deepEqual(missingTools('https://example.com/cli.tgz',{version:'24.14.9',probe:none}),['Node.js 24.15 or later','npm']);
+ assert.deepEqual(missingTools('github:org/cli#abc',{version:'25.0.0',probe:command=>command!=='git'}),['Git (cli.json selects a git commit)']);
+});
+
+test('npm and npx run through Node on Windows only, so no shell splits the arguments',()=>{
+ const node=join(tmpdir(),'node js','node.exe'),npx=join(tmpdir(),'node js','node_modules','npm','bin','npx-cli.js');
+ assert.equal(npmScript('npx',{platform:'darwin',node,exists:()=>true}),null);
+ assert.equal(npmScript('npx',{platform:'win32',node,exists:path=>path===npx}),npx);
+ assert.equal(npmScript('git',{platform:'win32',node,exists:()=>true}),null);
+ assert.equal(npmScript('npm',{platform:'win32',node,exists:()=>false}),null,'without npm beside Node, the shell is used as before');
+});

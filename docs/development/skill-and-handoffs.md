@@ -39,25 +39,25 @@ command syntax belongs in installed help and host differences in the runtime
 interface. A guide may point to a genuinely different next action; it must not
 hide prerequisites for its own decision behind that link. Review the whole
 entry table and callers when moving guidance, and remove superseded files.
-`node scripts/check-skill.mjs` validates reachability and links; the build copies
-the complete skill into the runtime and both host plugins. These checks do not
-establish that the purpose is understood.
+`node scripts/check-skill.mjs` validates reachability and links. The skill folder
+is distributed as it is, without a build. These checks do not establish that the
+purpose is understood.
 
 [Connection guidance](../../plugins/chill-agent/skills/chill-agent/references/workspace/connect.md)
 asks the runtime for the selected interface; shared guides contain no host-specific
-receipt or activation rules. See [harness boundaries](harness-boundaries.md) and
-[Claude entry](claude-plugin.md) for their separate development topics.
+receipt or activation rules. See the CLI's [harness boundaries](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/development/harness-boundaries.md)
+for that separate development topic.
 
 ## Direct handoffs, current facts
 
 ```text
 Web feedback → CLI delivery → current context + packaged Skill entry
 AutoContinue → observed facts + filtered index + auto-mode/continue.md
-Agent → selected action guide → work → Brief / Comment / Letter
+Agent → selected action guide → work → Deliverable / Comment / Letter
 ```
 
-The runtime manifest names the entry. The CLI resolves its path within the
-immutable snapshot; it does not know chill-agent's reference names. The application's
+Setup records the entry (`SKILL.md`) that the starter passes. The CLI uses that
+path; it does not know chill-agent's reference names. The application's
 AutoContinue extension selects its own `references/auto-mode/continue.md` beside
 that entry. This one guide combines choosing useful work and checking a decision
 to stop, so the monitor sends one request per meaningful revision. Its server
@@ -66,7 +66,7 @@ without a guide keeps a minimal generic handoff. AutoContinue's scheduling,
 reservation and pause handling remain independent of guidance text.
 
 `goal show --section context` uses the existing Goal reader. It retains scope,
-criteria, new input and question references while linking to Brief and Letter
+criteria, new input and question references while linking to Deliverable and Letter
 bodies. No second summary store or inferred completion state is involved.
 
 ## Verify the format, then evaluate behavior
@@ -76,4 +76,4 @@ unchanged delivery invariants. They do not establish the quality of agent
 judgment. After the format is ready, use the separate
 [evaluation workflow](evaluating-the-skill.md) for Q&A and isolated tool exercises.
 Record which snapshot was tested; a source edit alone does not update a running
-server or the installed plugin. See [build and installation](build-and-plugins.md).
+server or the skill already loaded in a chat. See [Skill and CLI](skill-and-cli.md).

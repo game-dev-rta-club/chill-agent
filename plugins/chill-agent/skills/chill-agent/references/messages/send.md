@@ -1,14 +1,15 @@
 ---
 keyPoints: >-
   Deliver what the user needs to receive, with enough context to use or decide.
-  Letters ask for necessary replies; Comments carry results and progress.
+  Letters ask for necessary replies; Comments carry results and progress. One
+  message per response: questions that come with a reply go at its end. Work
+  moved to a Split Goal is discussed there; the parent gets one pointer.
 ---
 
 # Send a message
 
 Use a Letter only when the user needs to answer, choose or grant permission.
-Use a Comment for requested findings, completed artifacts and progress; keep
-the current explanation in the Brief. Do not turn a report into a question or
+Use a Comment for requested findings, completed artifacts and progress. Do not turn a report into a question or
 ask for acknowledgement just to leave a Letter open.
 
 Lead with the result, evidence, artifact link and limitations needed to use it.
@@ -16,6 +17,11 @@ For a real decision, explain the next proposed action, your recommendation and
 what the answer changes. Check recent Conversation, including answered and
 closed Letters, to avoid repeating either a report or an existing question.
 A result already delivered in a Comment needs no replacement Letter.
+
+Send one message per response. The user reads the newest message first and can
+miss one above it, so when a reply to feedback also needs an answer, put the
+questions at the end of that reply instead of sending a separate Letter. Use a
+Letter for a question that stands on its own.
 
 For a consequential choice that belongs to the user, investigate available facts
 and prepare enough authorized work to make your recommendation concrete. Explain
@@ -27,7 +33,7 @@ to their actual dependencies.
 
 Save beside the Goal with `goal letter --title ...` or `goal comment`, using
 `--text-file` for longer messages and installed help for syntax. Verify the saved
-event. Keep the current explanation in the Brief; saving a message changes
+event. Plans and progress stay in Conversation; saving a message changes
 neither work selection nor Goal completion.
 
 For a saved Letter, use `settings notice --id <goal> --event <event>` with the
@@ -38,6 +44,12 @@ command for sent, failed or unconfirmed. Disabled or uncertain delivery is not
 permission to switch routes or retry. Acceptance does not prove the user saw it.
 Use installed help for syntax or current settings when needed; do not alter
 notification preferences as part of reporting.
+
+Reply where the work is. When a request moves into a Split Goal, continue the
+conversation in that Goal, beside its Deliverable, and leave the parent one short
+Comment that names it (Goal #N) instead of answering in both. Answer later
+feedback on the parent about that work in the Split Goal as well, and close it on
+the parent with the same one-line pointer, since only a Comment there answers it.
 
 Continue authorized work without waiting for an answer that it does not need.
 An AutoContinue pass with no new outcome or remaining work has only its internal

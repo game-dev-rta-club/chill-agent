@@ -6,9 +6,19 @@ keyPoints: >-
 
 # Changelog
 
+## 0.5.0
+
+- Minor release in the pre-1.0 line, adopting CLI 0.5.0. Existing SQLite workspaces need no migration.
+- **Breaking:** chill-agent is now one skill folder plus `cli.json`, which names the exact CLI release; the starter fetches it with npx on first use. Install the complete `chill-agent` folder and avoid enabling an older chill-agent plugin at the same time.
+- **Breaking:** the Deliverable replaces the Brief and holds only a Goal's final output; plans and progress go to Conversation. Deliverables are written HTML first, readable by a newcomer, starting with the problem and a coarse finished form.
+- Codex Desktop and Claude Code (Desktop app or CLI) are both full connections. Claude receives Web feedback through its reply waiter, can schedule a check while waiting on CI, and its in-app questions appear as Letters.
+- Agents converse in the Split Goal that holds the work, send one message per response and put questions at the end of the reply.
+- The public link requires a one-time access code per device; see the CLI 0.5.0 notes for the panel and connected devices.
+- Keep Windows limits explicit: portable checks pass, but automatic Web startup is qualified on macOS only.
+
 ## 0.4.0
 
-- Minor release in the pre-1.0 line, adopting CLI 0.4.0. Compatibility and migration history are recorded in the [0.4.0 release notes](https://github.com/game-dev-rta-club/chill-agnet/releases/tag/v0.4.0).
+- Minor release in the pre-1.0 line, adopting CLI 0.4.0. Compatibility and migration history are recorded in the [0.4.0 release notes](https://github.com/game-dev-rta-club/chill-agent/releases/tag/v0.4.0).
 - Create SQLite workspaces by default, with paged conversation history, indexed reads and reusable coordination leases. Node.js 24.15+ is required; no separate database service is needed.
 - Distribute a thin standalone skill for Codex and experimental Claude. It pins this release's exact application commit and acquires its fixed CLI and locked dependencies through npm into a project-specific installation on first use. Existing active workspaces are not silently restarted or migrated.
 - Use Letters only for necessary replies, choices and permissions. Save results in Comments, continue authorized work while nonblocking questions are unanswered, and review the next useful action before stopping Auto mode.

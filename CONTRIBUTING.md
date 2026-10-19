@@ -1,6 +1,6 @@
 ---
 keyPoints: >-
-  Propose focused changes, run the composed package checks and send a pull request.
+  Propose focused changes, run the skill checks and send a pull request.
   Keep user guidance here and shared workspace or host contracts in the CLI repository.
 ---
 
@@ -26,22 +26,25 @@ external contributions follow maintainer review.
 
 ## Local development
 
-Use Node.js 24 and Git. The Desktop harness integration currently supports macOS.
+Use Node.js 24 and Git. Codex Desktop is supported on macOS; Claude Code on macOS
+and Windows.
+This repository is the skill and its `cli.json`; there is nothing to build.
 
 ```sh
-git clone https://github.com/game-dev-rta-club/chill-agnet.git
-cd chill-agnet
+git clone https://github.com/game-dev-rta-club/chill-agent.git
+cd chill-agent
 npm ci
 npm run check
+npm run check:install
 ```
 
 Run focused tests while developing, then the full check before your pull request.
-CI also checks portable JavaScript contracts on Windows; that is not a promise
-of a Windows Desktop integration. Keep generated bundles out of source control.
+`check:install` needs network access; it fetches the CLI named in `cli.json` and
+runs setup in a disposable directory. CI runs both checks on macOS and Windows.
 
-See [build and plugin layout](docs/development/build-and-plugins.md) before
-editing skills or generated output. For CLI changes, follow
-[development across repositories](docs/development/two-repositories.md).
+See [Skill and CLI](docs/development/skill-and-cli.md) before editing the skill
+or `cli.json`. Program changes belong in
+[chill-agent-cli](https://github.com/game-dev-rta-club/chill-agent-cli).
 
 ## Documentation ownership
 

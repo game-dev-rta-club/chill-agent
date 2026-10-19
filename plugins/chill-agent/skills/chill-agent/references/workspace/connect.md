@@ -1,7 +1,7 @@
 ---
 keyPoints: >-
-  Ask the runtime for the calling connection's interface. Reuse a verified
-  workspace; on first use let the runtime prepare it and follow its next actions.
+  Reuse the calling workspace. On first use follow the runtime's welcome flow:
+  prepare an initial Goal, open Web and request only necessary native activation.
 ---
 
 # Connect this conversation
@@ -12,22 +12,18 @@ ID does not authorize handing work to another conversation.
 ## Read the selected interface
 
 Identify the calling harness from the current host, never from a model name or
-another Goal's binding. Do not guess when the host is unknown. Resolve this
-script relative to the installed skill and run:
+another Goal's binding. Do not guess when the host is unknown. An established
+connection's prefix reads its interface without changing Goals:
 
 ```sh
-node '<skill-directory>/scripts/start.mjs' guide --harness '<calling-harness-id>'
+'<command>' session guide --harness '<calling-harness-id>'
 ```
 
-This does not change Goals or connect a conversation. On first invocation the
-starter may install its fixed runtime with npm; run from the native project
-directory so the installation remains project-local. A runtime that supports it also exposes the same result as
-`session guide --harness <calling-harness-id>`. Keep using the installed reader
-when an established workspace has an older runtime; do not upgrade it just to
-read guidance. Follow its `operations`, confirmation rules, `nextActions`
-and constraints; reuse that interface while the connection is unchanged. It
-owns host-specific commands, native activation and unsupported operations.
-No operation, or a null operation, is permission to use another host's route.
+Follow its `operations`, confirmation rules, `nextActions` and constraints; reuse
+that interface while the connection is unchanged. It owns host-specific
+commands, native activation and unsupported operations. No operation, or a null
+operation, is permission to use another host's route. Keep using an established
+workspace's runtime; do not upgrade it just to read guidance.
 
 ## Prepare only when needed
 
@@ -36,21 +32,40 @@ data directory and port to reuse. Do not replace that workspace or its runtime
 merely because a newer skill is installed. An explicit new-project request uses
 that project's directory instead.
 
-On first use, identify the native project directory using the selected interface.
-Do not use the skill installation folder. Run the preparation yourself:
+On first use, identify the native project directory using the host. Do not use
+the skill installation folder. Run the preparation yourself:
 
 ```sh
-node '<skill-directory>/scripts/start.mjs' start --project '<native-project-directory>' --harness '<calling-harness-id>'
+node '<skill-directory>/scripts/start.mjs' --harness '<calling-harness-id>' --project '<native-project-directory>'
 ```
 
-Use the available Node.js 24 executable. The runtime prepares the isolated store
-and starts or reuses Web, returning its stable `command` and selected interface.
-Follow the returned next actions and verify connection confirmation before Root
-creation. Native trust or activation may require the user; never approve it on
-their behalf. An installed file or a running Web is not proof of connection.
+It checks Node.js 24.15+, npm and, for a git-based CLI, Git, then fetches the CLI
+named in the skill's `cli.json` and runs its setup. If a tool is missing, explain
+its purpose and the specific installation you propose, and obtain the user's
+agreement before installing or repairing it; then rerun. `cloudflared` is needed
+only for a phone or public link: offer installation or local-only use when that
+is requested. Tool installation does not authorize publishing a link.
+
+Setup returns the stable `command` and names the next step. Run it:
+
+```sh
+'<command>' session start --harness '<calling-harness-id>' --project '<native-project-directory>'
+```
+
+It starts or reuses Web and returns the selected interface. Follow
+`interface.onboarding` in order, using the returned `url` and `command`. The
+selected interface's `activation` and operation confirmation rules determine
+what must be verified before Root creation. Preparation alone does not verify
+native activation; `connectionVerified:false` is not evidence that approval is
+required. Native trust remains the user's decision.
 
 Do not give the user a setup command list. An incomplete installation needs the
-complete built skill, not a different harness or an arbitrary runtime download.
-After connection verification, creating a useful Goal is the next action; open
-the local Web once it exists.
+complete skill folder with its `cli.json`, not a different harness or another CLI.
+Prepare the initial Goal from the supplied outcome, or the interface's discovery
+starter and welcome when the user only asks to begin. Open that page using the host
+browser tool before asking a question or ending the turn. If native activation
+prevents creation, open the workspace URL first and explain the required action
+using the interface's short message. If opening fails, supply the clickable URL.
+Keep the same Goal as the conversation gives it a concrete outcome. An existing
+connection keeps its Goal; resuming must not add another starter.
 Preserve existing public-access settings, queues and manual pauses.

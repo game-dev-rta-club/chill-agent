@@ -6,7 +6,7 @@ keyPoints: >-
 
 <p align="center"><img src="assets/overview.svg" alt="chill-agent: agree on a goal, let the agent work, review the result" width="100%" /></p>
 
-<p align="center"><a href="https://github.com/game-dev-rta-club/chill-agnet/actions"><img alt="CI" src="https://github.com/game-dev-rta-club/chill-agnet/actions/workflows/ci.yml/badge.svg" /></a> <img alt="MIT License" src="https://img.shields.io/badge/license-MIT-green" /> <img alt="Node.js 24" src="https://img.shields.io/badge/node-24-339933" /></p>
+<p align="center"><a href="https://github.com/game-dev-rta-club/chill-agent/actions"><img alt="CI" src="https://github.com/game-dev-rta-club/chill-agent/actions/workflows/ci.yml/badge.svg" /></a> <img alt="MIT License" src="https://img.shields.io/badge/license-MIT-green" /> <img alt="Node.js 24" src="https://img.shields.io/badge/node-24-339933" /></p>
 
 # Work you can leave with an agent
 
@@ -16,15 +16,16 @@ Describe what you want to achieve, agree on a direction, and let your agent get 
 | --- | --- | --- |
 | See the plan and progress | Comment right on the work | Pause, resume, or change direction |
 
-<p align="center"><img src="assets/workspace.png" alt="A Goal page showing its Brief, Conversation, and agent controls" width="900" /></p>
+<p align="center"><img src="assets/workspace.png" alt="A Goal page showing its Deliverable, Conversation, and agent controls" width="900" /></p>
 
 ## A place to come back to
 
 - **Goals** describe the outcome. Larger jobs can be split into smaller Goals.
-- **Briefs** show the current plan or result, ready to read and comment on.
-- **Letters** bring you questions that need your decision.
+- **Deliverables** show each Goal's final output, ready to read and comment on.
+- **Conversation** keeps plans, progress and your feedback beside it.
+- **Letters** bring you questions that need your decision, including a question the agent asks in its own app.
 
-Your agent uses the same workspace. You can shape the work as it goes, without having to repeat the whole conversation.
+Your agent uses the same workspace. You can shape the work as it goes, without having to repeat the whole conversation. Comments you send while it works wait for that work to end, and the Web shows when it is running, waiting on a check, paused or done.
 
 Want help keeping things moving? Turn on [AutoContinue](docs/using/auto-continue.md). After the agent's run ends, chill-agent asks it to pick up any agreed work it can continue. You stay in control of what it takes on.
 
@@ -35,25 +36,26 @@ then invoke **chill-agent** in the project you want to work on. The agent prepar
 that project's workspace and opens its Web page; there is no separate setup
 command for you to run.
 
-The same folder works in **Codex Desktop** and **Claude Code (experimental connection)** on macOS.
-Node.js 24.15 or newer, npm and Git are required; first use needs network access. See
-[Install the skill](docs/using/install.md) for locations and how to obtain the
-built folder. Initial native Hook approval may still be required; Claude may
+The same folder works in **Codex Desktop** on macOS and in **Claude Code** (the Desktop app or the CLI) on macOS and Windows.
+Node.js 24.15 or newer and npm are required (Git too while `cli.json` names a
+CLI commit); first use needs network access. The skill fetches the CLI named in
+its `cli.json` with npx. See [Install the skill](docs/using/install.md) for
+locations and how to obtain the folder. Initial native Hook approval may still be required; Claude may
 also need to resume the same conversation to activate its connection. The agent
 explains only the remaining native step.
 
-Optional [notifications](docs/using/notifications.md),
-[phone access](docs/using/public-link.md) and color themes live in the Web's
-**More** menu. Installation does not enable them.
+Optional [notifications](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/using/notifications.md),
+a [public link](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/using/public-link.md) for opening the workspace
+from a phone or another computer, and color themes live in the Web's **More** menu. Installation does not enable them.
+A device opens the public link only after it connects with the access code shown on your computer.
 
 Next, see [how to work together](docs/using/working-together.md), or find a focused guide in [the documentation](docs/README.md).
 
-For the experimental Claude Code connection, see [setup](docs/development/claude-plugin.md)
-and [receiving Web feedback](docs/using/claude-code.md).
+Using Claude Code? See [receiving Web feedback](docs/using/claude-code.md).
 
 ## Building your own workflow?
 
-Use [chill-agent-cli](https://github.com/game-dev-rta-club/chill-agent-cli) if you want the workspace and agent connection with your own scheduling or orchestration. Its repository owns the CLI reference and extension documentation.
+Use [chill-agent-cli](https://github.com/game-dev-rta-club/chill-agent-cli) if you want the workspace and agent connection with your own scheduling or orchestration. It runs every chill-agent feature by itself; this repository adds the skill. Its repository owns the CLI reference and extension documentation.
 
 ## Help make it better
 
