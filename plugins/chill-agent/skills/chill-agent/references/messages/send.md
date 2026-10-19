@@ -2,7 +2,8 @@
 keyPoints: >-
   Deliver what the user needs to receive, with enough context to use or decide.
   Letters ask for necessary replies; Comments carry results and progress. One
-  message per response: questions that come with a reply go at its end.
+  message per response: questions that come with a reply go at its end. Work
+  moved to a Split Goal is discussed there; the parent gets one pointer.
 ---
 
 # Send a message
@@ -43,6 +44,12 @@ command for sent, failed or unconfirmed. Disabled or uncertain delivery is not
 permission to switch routes or retry. Acceptance does not prove the user saw it.
 Use installed help for syntax or current settings when needed; do not alter
 notification preferences as part of reporting.
+
+Reply where the work is. When a request moves into a Split Goal, continue the
+conversation in that Goal, beside its Deliverable, and leave the parent one short
+Comment that names it (Goal #N) instead of answering in both. Answer later
+feedback on the parent about that work in the Split Goal as well, and close it on
+the parent with the same one-line pointer, since only a Comment there answers it.
 
 Continue authorized work without waiting for an answer that it does not need.
 An AutoContinue pass with no new outcome or remaining work has only its internal
