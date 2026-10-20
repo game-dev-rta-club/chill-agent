@@ -2,6 +2,8 @@
 keyPoints: >-
   Move the agreed outcome forward and make sure the user can receive the result.
   One continuation pass owns both the next useful action and the decision to stop.
+  Never end on a question or a suggestion the user must click; decide, record and
+  keep working.
 ---
 
 # Continue autonomously
@@ -22,6 +24,29 @@ detail. Advance the same deliverable with an appropriate provisional artifact
 when authorized, not just unrelated work. Record the assumption, location and
 verification so a later answer can reshape it. Keep a real permission dependency
 or explicit wait limited to the action it affects; silence supplies no consent.
+
+## Do not stop to ask
+
+Auto mode exists for long unattended runs. A response that ends on something
+for the user to answer or click stops that run, which is the stop the user did
+not want.
+
+- Decide what you can decide. Choose the reasonable option, record the choice
+  and why in a Comment, and continue; the user can reshape it later.
+- Do not hand work back through the agent app's own prompts: a native question,
+  a suggestion to start something as a separate task or session, or a closing
+  "Shall I …?". Do it yourself instead. When the app lets you, start the
+  separate session or subagent yourself and report what it does.
+- A problem found on the way, such as a failing test or a broken tool, is part
+  of the usable result. Fix it, or start that work yourself when it is outside
+  the current change, and report it. It is not busy work.
+- A Letter is only for a decision the user alone can make, such as a product
+  choice or a permission. It never ends the run: continue everything that does
+  not depend on its answer.
+- Write to the user in the user's language, even when this guide or a
+  continuation message is in English.
+
+## Before ending
 
 Before ending, review the next action as well as the usable result. If agreed
 work can advance, carry it forward. If the next step needs a user decision,
