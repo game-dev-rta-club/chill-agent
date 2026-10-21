@@ -6,6 +6,12 @@ keyPoints: >-
 
 # Changelog
 
+## 0.5.1
+
+- Patch release, chosen by the maintainer, adopting CLI 0.5.1. Existing workspaces and connected devices need no migration.
+- Claude Code: the Web shows the background tasks a conversation still runs, conversations that never use chill keep their hooks nearly free, and a question or plan the agent would ask in its own app comes to the user as a Letter instead.
+- Public link: the access code is six digits, and a connected device can confirm an update. See the CLI 0.5.1 notes.
+
 ## 0.5.0
 
 - Minor release in the pre-1.0 line, adopting CLI 0.5.0. Existing SQLite workspaces need no migration.
