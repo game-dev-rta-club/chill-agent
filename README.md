@@ -23,7 +23,7 @@ Describe what you want to achieve, agree on a direction, and let your agent get 
 - **Goals** describe the outcome. Larger jobs can be split into smaller Goals.
 - **Deliverables** show each Goal's final output, ready to read and comment on.
 - **Conversation** keeps plans, progress and your feedback beside it.
-- **Letters** bring you questions that need your decision, including a question the agent asks in its own app.
+- **Letters** bring you questions that need your decision. A question or plan the agent would ask in its own app comes to you as a Letter instead.
 
 Your agent uses the same workspace. You can shape the work as it goes, without having to repeat the whole conversation. Comments you send while it works wait for that work to end, and the Web shows when it is running, waiting on a check, paused or done.
 
