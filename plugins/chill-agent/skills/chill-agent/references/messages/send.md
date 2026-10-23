@@ -2,10 +2,9 @@
 keyPoints: >-
   Deliver what the user needs to receive, with enough context to use or decide.
   Letters ask for necessary replies; Comments carry results and progress. One
-  message per response: questions that come with a reply go at its end. The
-  final reply of a turn is posted to the one Goal handed feedback in that turn and
-  awaiting a reply; do not repeat it as a Comment. Work moved to a Split Goal is discussed there; the parent gets
-  one pointer.
+  message per response: questions that come with a reply go at its end. Your
+  messages are posted to the conversation's current Goal. Work moved to a Split
+  Goal is discussed there; the parent gets one pointer.
 ---
 
 # Send a message
@@ -25,12 +24,11 @@ miss one above it, so when a reply to feedback also needs an answer, put the
 questions at the end of that reply instead of sending a separate Letter. Use a
 Letter for a question that stands on its own.
 
-When your turn ends, chill posts your final reply to the Goal as its answer if
-exactly one Goal you were handed feedback on in this turn still awaits a reply.
-Write that final reply for the user on the Web, in their language, and do not
-repeat it as a separate Comment. Reply on each Goal yourself, with the connection
-interface's reply, to answer several Goals, a Goal still awaiting from an earlier
-turn, or to reply before the turn ends.
+chill posts every message you write in a connected conversation, in order, to
+its current Goal: the Goal last handed feedback, replied on, or woken for by a
+check scheduled for it. Feedback from several Goals at once leaves none until you
+reply on one. The connection interface's reply answers a specific Goal, or each
+of several.
 
 For a consequential choice that belongs to the user, investigate available facts
 and prepare enough authorized work to make your recommendation concrete. Explain
@@ -59,8 +57,8 @@ conversation in that Goal, beside its Deliverable, and leave the parent one shor
 reply that names it (Goal #N) instead of answering in both. Answer later
 feedback on the parent about that work in the Split Goal as well, and close it on
 the parent with the same one-line pointer, since only a reply there answers it.
-When the parent is the one Goal awaiting the turn's reply, your final reply is posted
-there: make it that pointer, with the substance in a Comment on the Split Goal.
+Replying on the Split Goal makes it the current Goal, so your later messages are
+posted there.
 
 Continue authorized work without waiting for an answer that it does not need.
 An AutoContinue pass with no new outcome or remaining work ends with one short
