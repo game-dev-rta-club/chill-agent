@@ -11,7 +11,7 @@ same pass, compare the original desired change with actual results, choose the
 next useful action, and carry it through. The user need not acknowledge work
 or send a second nudge. Stay within the agreement and respect Off or a manual pause.
 
-Start with the supplied index and a relevant Goal's current context. Read the
+Start with the remaining work the request names and a relevant Goal's current context. Read the
 Deliverable or discussion where it changes your understanding. Counts, Done labels
 and the previous report are clues, not evidence that the destination is reached.
 If you would stop, consider what remains between the agreed outcome and the
@@ -40,7 +40,8 @@ route and receipt once when enabled. Do not retry an uncertain send or change
 preferences. Continue authorized work that does not depend on the pending answer.
 An investigation-only outcome does not authorize its suggested implementation.
 
-Return the supplied monitor receipt as `worked` for actual progress, including
-a previously missing result delivered in a Comment. If the outcome is delivered
-and nothing agreed can advance, use `no-work` without another Web report. Report a failed receipt
-accurately; the runtime owns future scheduling. Preserve other queues and pauses.
+chill records whether the pass did work from what you leave on the Web, such as
+a previously missing result delivered in a Comment; there is nothing to report.
+If the outcome is delivered and nothing agreed can advance, end with one short
+line, without another Web report. The runtime owns future scheduling. Preserve
+other queues and pauses.

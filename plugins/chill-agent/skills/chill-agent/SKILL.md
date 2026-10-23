@@ -59,5 +59,5 @@ Reuse the stable CLI prefix and selected connection interface from setup or
 incoming feedback. The interface owns harness-specific operations and confirmation;
 installed subcommand help owns syntax. Supplied read commands lead to current
 Goal context and relevant history. Use file input for longer messages, verify
-writes, and distinguish feedback receipts, work selection and Goal completion.
+writes, and distinguish answering feedback, work selection and Goal completion.
 A missing connection capability is not permission to use another harness.
