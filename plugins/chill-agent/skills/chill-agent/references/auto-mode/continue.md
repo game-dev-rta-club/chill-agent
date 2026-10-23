@@ -26,7 +26,8 @@ or explicit wait limited to the action it affects; silence supplies no consent.
 Before ending, review the next action as well as the usable result. If agreed
 work can advance, carry it forward. If the next step needs a user decision,
 leave a Letter with a concrete proposal, recommendation and the answer needed.
-Report results in a Comment, and [update the Deliverable](../deliverables/update.md) when the final output changes. Sending a report is
+Report results in a Comment unless a Goal handed feedback in this turn awaits a
+reply; your final reply is posted to that one. [Update the Deliverable](../deliverables/update.md) when the final output changes. Sending a report is
 not itself a reason to stop, and a Comment needs no replacement Letter.
 Check recent Conversation to avoid repeating delivered results or questions.
 When the agreed outcome is achieved, or the user explicitly wants an observation
@@ -41,7 +42,8 @@ preferences. Continue authorized work that does not depend on the pending answer
 An investigation-only outcome does not authorize its suggested implementation.
 
 chill records whether the pass did work from what you leave on the Web, such as
-a previously missing result delivered in a Comment; there is nothing to report.
+a previously missing result delivered in a Comment, but not the final reply it
+posts for you; there is nothing to report.
 If the outcome is delivered and nothing agreed can advance, end with one short
 line, without another Web report. The runtime owns future scheduling. Preserve
 other queues and pauses.
