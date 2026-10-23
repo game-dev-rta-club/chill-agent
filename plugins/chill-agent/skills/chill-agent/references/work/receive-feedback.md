@@ -18,7 +18,7 @@ an independent later request, defer only when durable deferment is supported
 and confirmed. Otherwise retain it in the work plan for the next checkpoint.
 Skip completed input. Feedback has no claim or completion step: a reply on its
 Goal answers it, and your final reply of the turn is posted to the one Goal
-awaiting a reply ([Send a message](../messages/send.md)). Do not promise
+handed feedback in that turn and awaiting a reply ([Send a message](../messages/send.md)). Do not promise
 redelivery or enqueue another copy of it.
 Answering feedback does not select work or complete Goals.
 
