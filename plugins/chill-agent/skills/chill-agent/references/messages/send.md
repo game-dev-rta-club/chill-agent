@@ -2,9 +2,8 @@
 keyPoints: >-
   Deliver what the user needs to receive, with enough context to use or decide.
   Letters ask for necessary replies; Comments carry results and progress. One
-  message per response: questions that come with a reply go at its end. The last
-  message of each turn is posted to the conversation's current Goal. Work moved to a Split
-  Goal is discussed there; the parent gets one pointer.
+  message per response: questions that come with a reply go at its end. Work
+  moved to a Split Goal is discussed there; the parent gets one pointer.
 ---
 
 # Send a message
@@ -23,12 +22,6 @@ Send one message per response. The user reads the newest message first and can
 miss one above it, so when a reply to feedback also needs an answer, put the
 questions at the end of that reply instead of sending a separate Letter. Use a
 Letter for a question that stands on its own.
-
-chill posts the last message of each turn in a connected conversation to its
-current Goal: the Goal last handed feedback, replied on, or woken for by a
-check scheduled for it. Feedback from several Goals at once leaves none until you
-reply on one. The connection interface's reply answers a specific Goal, or each
-of several.
 
 For a consequential choice that belongs to the user, investigate available facts
 and prepare enough authorized work to make your recommendation concrete. Explain
@@ -54,11 +47,9 @@ notification preferences as part of reporting.
 
 Reply where the work is. When a request moves into a Split Goal, continue the
 conversation in that Goal, beside its Deliverable, and leave the parent one short
-reply that names it (Goal #N) instead of answering in both. Answer later
+Comment that names it (Goal #N) instead of answering in both. Answer later
 feedback on the parent about that work in the Split Goal as well, and close it on
-the parent with the same one-line pointer, since only a reply there answers it.
-Replying on the Split Goal makes it the current Goal, so the last message of each
-later turn is posted there.
+the parent with the same one-line pointer, since only a Comment there answers it.
 
 Continue authorized work without waiting for an answer that it does not need.
 An AutoContinue pass with no new outcome or remaining work ends with one short

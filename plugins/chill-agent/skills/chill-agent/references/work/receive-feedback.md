@@ -16,10 +16,8 @@ itself require switching tasks.
 Use the verified connection interface. For
 an independent later request, defer only when durable deferment is supported
 and confirmed. Otherwise retain it in the work plan for the next checkpoint.
-Skip completed input. Feedback has no claim or completion step: a reply on its
-Goal answers it, and the last message of each turn is posted to the conversation's current Goal
-([Send a message](../messages/send.md)). Do not promise
-redelivery or enqueue another copy of it.
+Skip completed input. Feedback has no claim or completion step: a Comment on
+its Goal answers it. Do not promise redelivery or enqueue another copy of it.
 Answering feedback does not select work or complete Goals.
 
 On resumption, use the short Goal index and current context to find the gap
