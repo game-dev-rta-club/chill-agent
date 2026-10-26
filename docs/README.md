@@ -14,7 +14,7 @@ part you want to understand:
 | Install the same skill in Codex or Claude | [Install the skill](using/install.md) |
 | Agree on work, leave feedback and review the result | [Work together](using/working-together.md) |
 | Receive Web feedback in an existing Claude conversation | [Use Web with Claude Code](using/claude-code.md) |
-| Let the agent check for work it can continue | [AutoContinue](using/auto-continue.md) |
+| Choose how far the agent goes on its own | [Autonomy](using/autonomy.md) |
 | Hear when results or decisions need your attention | [Notifications](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/using/notifications.md) |
 | Open the workspace on your phone or keep a fixed URL | [Public link](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/using/public-link.md) |
 | Understand what the skill and the CLI each own | [Architecture](architecture.md) |

@@ -19,7 +19,7 @@ Install it as it is; nothing is generated from it.
 
 Everything after that call belongs to
 [chill-agent-cli](https://github.com/game-dev-rta-club/chill-agent-cli): Web,
-Goal data, the Claude and Codex connections, AutoContinue, notifications, the
+Goal data, the Claude and Codex connections, Autonomy, notifications, the
 public link and the first-use session. Its
 [version file contract](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/runtime/version-file.md)
 defines what setup records and how Web follows a changed `cli.json`. Change that

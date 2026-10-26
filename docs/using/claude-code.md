@@ -25,9 +25,9 @@ source for supported options.
    conversation. A push notification alone does not verify this round trip.
 3. For reception between responses, the agent keeps a reply waiter running as a
    Claude background task. chill's results ask it to start one when none runs.
-4. Resolve any required native tool approvals in Claude. Turn on
-   [AutoContinue](auto-continue.md) only if you want autonomous continuation too.
-   It neither grants tool permissions nor keeps a closed Claude process alive.
+4. Resolve any required native tool approvals in Claude, or raise the Goal's
+   [Autonomy](autonomy.md) to Lv 3 or Lv 4 to have them approved. No level keeps
+   a closed Claude process alive.
 
 Keep a single receiving process for the conversation. If it is already running,
 opening the same conversation in another CLI can interfere with reception.

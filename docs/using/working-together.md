@@ -50,17 +50,16 @@ The same header works on your phone and computer. **Agent** shows the current
 run. **Letters**, beside Agent, opens unanswered Letters for the current Root
 and its children. Its envelope is muted at zero and highlighted with a count
 when Letters are waiting. On the Goals index it includes all Roots.
-**More** contains **Goals** navigation, Color theme, AutoContinue, Notifications and Public link.
+**More** contains **Goals** navigation, Color theme, Notifications and Public link.
 
 The Agent panel shows the current status and a link to the work Goal, without
 message bodies or a list of old runs. When the exact work Goal is unavailable,
 the link is labelled Root Goal. Use Pause or Resume beside Activity to control
 supported work.
-While manually paused, Auto mode sends no new continuation; Resume retains your
-Auto mode preference.
-The available controls depend on the connected harness and CLI version. Pausing
-work and disabling [AutoContinue](auto-continue.md) serve different purposes:
-one interrupts or holds work, while the other prevents future automatic checks.
+While manually paused, chill sends no end-of-turn request; Resume keeps each
+Goal's [Autonomy](autonomy.md). The available controls depend on the connected
+harness and CLI version. Pausing holds work now, while lowering Autonomy to Lv 1
+stops future end-of-turn requests for that Goal.
 
 Use **More** to set [notifications](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/using/notifications.md) or [phone access](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/using/public-link.md).
 Each can be enabled independently; no separate setup skill is needed.

@@ -13,7 +13,7 @@ keyPoints: >-
 | Which CLI to run (`cli.json`) | chill-agent skill |
 | Setup, Goal data, Deliverables, Conversation and Letters | CLI |
 | Web, native delivery and execution coordination | CLI |
-| AutoContinue, notifications, public link, first-use session and host guides | CLI built-in extensions |
+| Autonomy's end-of-turn checks and approvals, notifications, public link, first-use session and host guides | CLI (built-in extensions for the optional parts) |
 | Following a changed `cli.json` on Web start or the update button | CLI |
 
 ```mermaid
