@@ -13,9 +13,10 @@ Use a Comment for requested findings, completed artifacts and progress. Do not t
 ask for acknowledgement just to leave a Letter open.
 
 Lead with the result, evidence, artifact link and limitations needed to use it.
-For a real decision, explain the next proposed action, your recommendation and
-what the answer changes. Check recent Conversation, including answered and
-closed Letters, to avoid repeating either a report or an existing question.
+For a real decision, show what the proposal changes, its current and finished
+form, with your recommendation and what the answer changes. Check recent
+Conversation, including answered and closed Letters, to avoid repeating either a
+report or an existing question.
 A result already delivered in a Comment needs no replacement Letter.
 
 Send one message per response. The user reads the newest message first and can
@@ -33,7 +34,7 @@ to their actual dependencies.
 
 Save beside the Goal with `goal letter --title ...` or `goal comment`, using
 `--text-file` for longer messages and installed help for syntax. Verify the saved
-event. Plans and progress stay in Conversation; saving a message changes
+event. Progress stays in Conversation; saving a message changes
 neither work selection nor Goal completion.
 
 For a saved Letter, use `settings notice --id <goal> --event <event>` with the

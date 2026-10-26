@@ -50,7 +50,7 @@ Another guide is for a different action, not a prerequisite reading chain.
 | Frame and record a new outcome | [Create a Goal](references/goals/create.md) |
 | Regroup outcomes so the work is easy to understand | [Reorganize Goals](references/goals/reorganize.md) |
 | Assess and record completion | [Complete a Goal](references/goals/complete.md) |
-| Publish the Goal's final output | [Update the Deliverable](references/deliverables/update.md) |
+| Write a plan, proposal or final output for the user | [Update the Deliverable](references/deliverables/update.md) |
 | Deliver a result, question or ordinary reply | [Send a message](references/messages/send.md) |
 | Receive feedback or resume interrupted work | [Receive feedback](references/work/receive-feedback.md) |
 | Continue autonomously and review whether to stop | [Continue autonomously](references/auto-mode/continue.md) |

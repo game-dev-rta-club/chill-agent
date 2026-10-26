@@ -1,32 +1,38 @@
 ---
 keyPoints: >-
-  The Deliverable holds only the Goal's final output, written in HTML. Start
-  with the problem and the finished form; keep the form coarse until it is
-  decided, then make it concrete: mockups, diagrams, illustrations or the
-  finished document. Write it for a newcomer to the project, and rewrite instead
-  of appending. Plans, proposals, progress and questions go to Conversation.
+  The Deliverable holds the Goal's final output, or a plan or proposal the user
+  decides on as a SubGoal's Deliverable, as a visual-first HTML page: one idea
+  and one relationship per screen through diagrams, tables and side-by-side
+  comparisons. Show a change as its current and finished form side by side, not
+  as steps. Write it for a newcomer and rewrite instead of appending.
 ---
 
 # Update the Deliverable
 
-Use this when the Goal's final output changes.
+Use this when the Goal's final output, or a plan or proposal for the user, changes.
 
-1. **Hold only this Goal's final output.** Plans, proposals, progress and
-   questions belong in Conversation. While the work goes on, a draft of the
-   output is fine. A separate output belongs in a SubGoal.
-2. **Write HTML from the start.** Do not use Markdown.
+1. **Hold only this Goal's final output.** Plans and proposals the user decides
+   on may be written as a SubGoal's Deliverable; progress and questions belong in
+   Conversation. While the work goes on, a draft of the output is fine. A
+   separate output belongs in a SubGoal.
+2. **Make it a visual-first HTML page.** Present one clear idea and one
+   meaningful relationship per screen, through varied diagrams (inline SVG),
+   tables and side-by-side comparisons, with only enough text to connect them
+   into an easy-to-grasp whole. A page of headings and bullets is Markdown in
+   HTML, not this.
 3. **Start with the problem and the finished form.** Say what this Goal solves,
-   then what the finished output is. While the form is still undecided, keep it
-   coarse, a sentence and a few points, and add detail only as it is decided.
+   then what the finished output is. **When something changes, show its current
+   form and its finished form side by side and say what differs; do not list the
+   steps to get there.** While the form is still undecided, keep it coarse and
+   add detail only as it is decided.
 4. **Once decided, show the final form as concretely as possible**, close to the
    output itself rather than a description of it:
    - a screen or feature: a mockup of the screen (static; scripts do not run)
    - a mechanism or flow: a diagram
    - a look or mood: an illustration or sample
    - a document: that document in its finished form
-5. **Write so a 20-year-old who has just joined the project understands it.**
-   Explain the project's current state and its terms without assuming prior
-   knowledge. When a change matters, make the before and after easy to compare.
+5. **Write so a 20-year-old new employee with no prior knowledge understands
+   it.** Explain the project's current state and its terms.
 6. **Rewrite the existing content instead of appending to it.** The Deliverable
    shares only the image of the finished output; superseded parts do not stay.
    Earlier versions remain in history.
