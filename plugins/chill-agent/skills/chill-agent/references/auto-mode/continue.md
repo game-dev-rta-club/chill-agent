@@ -1,15 +1,25 @@
 ---
 keyPoints: >-
-  Move the agreed outcome forward and make sure the user can receive the result.
-  One continuation pass owns both the next useful action and the decision to stop.
+  Each Goal's Autonomy says how far to go without the user. At the end of a turn,
+  do once what each listed level asks, then end with one short line when nothing remains.
 ---
 
 # Continue autonomously
 
-The purpose of Auto mode is useful progress while the user is away. In this
-same pass, compare the original desired change with actual results, choose the
-next useful action, and carry it through. The user need not acknowledge work
-or send a second nudge. Stay within the agreement and respect Off or a manual pause.
+The user sets **Autonomy** on each Goal, in its comment box. A new Goal starts
+with its parent's level. chill names the levels in feedback and in its end-of-turn
+request; nothing changes at Lv 1.
+
+| Level | What the user asks |
+| --- | --- |
+| Lv 1 Normal | Work as usual. |
+| Lv 2 Thorough | Think in the user's place. Prefer accuracy to speed: investigate deeply and widely, then give your best answer. Ask only what only the user can decide. Before handing the turn back, do what you left open but could have investigated or decided yourself. |
+| Lv 3 Continue | Lv 2, and after each turn keep working on what was agreed for this Goal. Tool requests are approved. |
+| Lv 4 Drive | Lv 3 for the whole tree under the Goal's Root: advance everything that does not need the user's judgment, ask those decisions as Letters and keep working elsewhere meanwhile. Leave Goals another live conversation holds. |
+
+Autonomy sets how far you go, not what you were asked: it never widens the
+agreed scope or undoes a pause. An investigation-only outcome does not authorize
+its suggested implementation.
 
 Start with the remaining work the request names and a relevant Goal's current context. Read the
 Deliverable or discussion where it changes your understanding. Counts, Done labels
@@ -23,10 +33,9 @@ when authorized, not just unrelated work. Record the assumption, location and
 verification so a later answer can reshape it. Keep a real permission dependency
 or explicit wait limited to the action it affects; silence supplies no consent.
 
-Before ending, review the next action as well as the usable result. If agreed
-work can advance, carry it forward. If the next step needs a user decision,
-leave a Letter with a concrete proposal, recommendation and the answer needed.
-Report results in a Comment, and [update the Deliverable](../deliverables/update.md) when the final output changes. Sending a report is
+If the next step needs a user decision, leave a Letter with a concrete proposal,
+recommendation and the answer needed. Report results in a Comment, and
+[update the Deliverable](../deliverables/update.md) when the final output changes. Sending a report is
 not itself a reason to stop, and a Comment needs no replacement Letter.
 Check recent Conversation to avoid repeating delivered results or questions.
 When the agreed outcome is achieved, or the user explicitly wants an observation
@@ -38,10 +47,8 @@ Use the supplied interface to select work and save results. After a Letter,
 a handled or web-push result needs no extra send; otherwise follow the returned
 route and receipt once when enabled. Do not retry an uncertain send or change
 preferences. Continue authorized work that does not depend on the pending answer.
-An investigation-only outcome does not authorize its suggested implementation.
 
-chill records whether the pass did work from what you leave on the Web, such as
+chill records whether the turn did work from what you leave on the Web, such as
 a previously missing result delivered in a Comment; there is nothing to report.
 If the outcome is delivered and nothing agreed can advance, end with one short
-line, without another Web report. The runtime owns future scheduling. Preserve
-other queues and pauses.
+line, without another Web report. The runtime owns future scheduling.

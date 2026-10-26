@@ -28,7 +28,7 @@ Keep questions and expected decisions in a separate author-side record, written
 before collecting answers. Cover both initiative and restraint: shaping an
 unclear goal, making delegated choices, asking an asynchronous question,
 respecting authorization, interpreting feedback, verifying completion and
-responding to AutoContinue.
+responding to an Autonomy end-of-turn request.
 
 Include situations that start with the user's conversation, before any Goal or
 success criteria exist. Let the evaluator frame the outcome and choose the next

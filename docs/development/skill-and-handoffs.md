@@ -1,8 +1,8 @@
 ---
 keyPoints: >-
   The Skill owns experience and decision guidance; action references hold conditional
-  detail. Feedback points to the packaged entry; AutoContinue directly selects its combined
-  continuation and stopping-review guide. Both use current Goal data.
+  detail. Feedback points to the packaged entry; the end-of-turn check for a Goal's Autonomy
+  directly selects its combined continuation and stopping-review guide. Both use current Goal data.
 ---
 
 # Maintain the skill and its handoffs
@@ -23,7 +23,7 @@ references before the agent can decide. A new action can select its own guide.
 
 For example, sending a message includes choosing Letter or Comment and handling
 its notification; it does not need separate reporting, delivery-review and
-notification readings. AutoContinue includes both continuing useful work and
+notification readings. Continuing autonomously includes both continuing useful work and
 checking whether the outcome was delivered. Feedback includes interpreting a
 Letter reply and resuming the affected work. Separate Goal creation, regrouping
 and completion remain useful because each has a different result to produce.
@@ -52,18 +52,19 @@ for that separate development topic.
 
 ```text
 Web feedback → CLI delivery → current context + packaged Skill entry
-AutoContinue → observed facts + filtered index + auto-mode/continue.md
+End of turn (Autonomy) → observed facts + Goals with their levels + auto-mode/continue.md
 Agent → selected action guide → work → Deliverable / Comment / Letter
 ```
 
 Setup records the entry (`SKILL.md`) that the starter passes. The CLI uses that
-path; it does not know chill-agent's reference names. The application's
-AutoContinue extension selects its own `references/auto-mode/continue.md` beside
-that entry. This one guide combines choosing useful work and checking a decision
-to stop, so the monitor sends one request per meaningful revision. Its server
-keepalive uses the same allowance. A plain CLI
-without a guide keeps a minimal generic handoff. AutoContinue's scheduling,
-reservation and pause handling remain independent of guidance text.
+path; it does not know chill-agent's reference names, except that the end-of-turn
+check selects `references/auto-mode/continue.md` beside that entry. The request
+names the conversation's Goals at Lv 2 or higher with what each level asks, so
+the guide holds one short table of the levels and the judgment they share. It
+combines choosing useful work and checking a decision to stop, so the CLI sends
+one request per meaningful revision. A plain CLI without a guide keeps a minimal
+generic handoff. Scheduling, reservation and pause handling remain independent
+of guidance text.
 
 `goal show --section context` uses the existing Goal reader. It retains scope,
 criteria, new input and question references while linking to Deliverable and Letter

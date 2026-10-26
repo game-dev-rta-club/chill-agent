@@ -53,5 +53,5 @@ feedback on the parent about that work in the Split Goal as well, and close it o
 the parent with the same one-line pointer, since only a Comment there answers it.
 
 Continue authorized work without waiting for an answer that it does not need.
-An AutoContinue pass with no new outcome or remaining work ends with one short
+An end-of-turn check with no new outcome or remaining work ends with one short
 line; chill records it, so it needs no result message.
