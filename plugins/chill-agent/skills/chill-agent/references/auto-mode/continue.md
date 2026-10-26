@@ -7,15 +7,14 @@ keyPoints: >-
 # Continue autonomously
 
 The user sets **Autonomy** on each Goal, in its comment box. A new Goal starts
-with its parent's level. chill names the levels in feedback and in its end-of-turn
-request; nothing changes at Lv 1.
+with its parent's level. chill names the levels in its end-of-turn request;
+nothing changes at Lv 1.
 
 | Level | What the user asks |
 | --- | --- |
 | Lv 1 Normal | Work as usual. |
-| Lv 2 Thorough | Think in the user's place. Prefer accuracy to speed: investigate deeply and widely, then give your best answer. Ask only what only the user can decide. Before handing the turn back, do what you left open but could have investigated or decided yourself. |
-| Lv 3 Continue | Lv 2, and after each turn keep working on what was agreed for this Goal. Tool requests are approved. |
-| Lv 4 Drive | Lv 3 for the whole tree under the Goal's Root: advance everything that does not need the user's judgment, ask those decisions as Letters and keep working elsewhere meanwhile. Leave Goals another live conversation holds. |
+| Lv 2 Continue | After each turn, keep working on what was agreed for this Goal. Tool requests are approved. |
+| Lv 3 Drive | Lv 2 for the whole tree under the Goal's Root: advance everything that does not need the user's judgment, ask those decisions as Letters and keep working elsewhere meanwhile. Leave Goals another live conversation holds. |
 
 Autonomy sets how far you go, not what you were asked: it never widens the
 agreed scope or undoes a pause. An investigation-only outcome does not authorize
