@@ -56,10 +56,10 @@ The Agent panel shows the current status and a link to the work Goal, without
 message bodies or a list of old runs. When the exact work Goal is unavailable,
 the link is labelled Root Goal. Use Pause or Resume beside Activity to control
 supported work.
-While manually paused, chill sends no end-of-turn request; Resume keeps each
-Goal's [Autonomy](autonomy.md). The available controls depend on the connected
-harness and CLI version. Pausing holds work now, while lowering Autonomy to Lv 1
-stops future end-of-turn requests for that Goal.
+While manually paused, chill sends no end-of-turn request; Resume keeps the
+Root agent's [Autonomy](autonomy.md). The available controls depend on the connected
+harness and CLI version. Pausing holds work now, while lowering Autonomy to Normal
+stops future end-of-turn requests for that Root.
 
 Use **More** to set [notifications](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/using/notifications.md) or [phone access](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/using/public-link.md).
 Each can be enabled independently; no separate setup skill is needed.

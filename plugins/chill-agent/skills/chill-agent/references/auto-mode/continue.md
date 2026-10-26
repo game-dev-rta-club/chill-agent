@@ -1,20 +1,21 @@
 ---
 keyPoints: >-
-  Each Goal's Autonomy says how far to go without the user. At the end of a turn,
-  do once what each listed level asks, then end with one short line when nothing remains.
+  Autonomy is set per agent (per Root) and says how far to go without the user.
+  At the end of a turn, do once what each listed level asks, then end with one short line when nothing remains.
 ---
 
 # Continue autonomously
 
-The user sets **Autonomy** on each Goal, in its comment box. A new Goal starts
-with its parent's level. chill names the levels in its end-of-turn request;
-nothing changes at Lv 1.
+The user sets **Autonomy** per agent (per Root): one level for the conversation
+that owns the Root, set from any of its Goals' comment boxes. A conversation
+that takes a Root over from another starts at Normal. chill names the levels in
+its end-of-turn request; nothing changes at Normal.
 
 | Level | What the user asks |
 | --- | --- |
-| Lv 1 Normal | Work as usual. |
-| Lv 2 Continue | After each turn, keep working on what was agreed for this Goal. Tool requests are approved. |
-| Lv 3 Drive | Lv 2 for the whole tree under the Goal's Root: advance everything that does not need the user's judgment, ask those decisions as Letters and keep working elsewhere meanwhile. Leave Goals another live conversation holds. |
+| Normal | Work as usual: do what each comment asks, then wait for the user. |
+| Auto Continue | After each turn, keep carrying out what you and the user clearly see the same way, in any Goal under the Root: work they asked for and plans you settled together. Suggest what they have not agreed to in its Goal instead of starting it. Ask what only the user can decide in a Letter and carry on with the rest. Tool requests are approved. |
+| Ultra Continue | The Root is delegated to you: its success criteria are fixed, how to reach them is your call. Find what is missing, plan it, split it into SubGoals and carry it out across the tree, writing each decision into its Goal. Ask in a Letter only for what is the user's alone: changing the criteria, matters of taste they leave open, and anything irreversible or beyond this workspace. Leave Goals another live conversation holds. Tool requests are approved. |
 
 Autonomy sets how far you go, not what you were asked: it never widens the
 agreed scope or undoes a pause. An investigation-only outcome does not authorize
