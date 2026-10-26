@@ -33,8 +33,8 @@ in the user's language, including exchanges that began in chat. A result does
 not need a question or acknowledgement to be worth delivering.
 
 Completion depends on the agreed outcome and actual evidence, not an ended run
-or completed children alone. Each Goal's **Autonomy** (Lv 1 to 3) says how far
-to go without the user; at Lv 1, finish the entrusted request and use the
+or completed children alone. **Autonomy**, set per agent (per Root), says how
+far to go without the user; at Normal, finish the entrusted request and use the
 conversation to shape what follows. No level expands scope or undoes a pause.
 When the outcome is achieved and delivered, let it rest.
 
@@ -53,7 +53,7 @@ Another guide is for a different action, not a prerequisite reading chain.
 | Write a plan, proposal or final output for the user | [Update the Deliverable](references/deliverables/update.md) |
 | Deliver a result, question or ordinary reply | [Send a message](references/messages/send.md) |
 | Receive feedback or resume interrupted work | [Receive feedback](references/work/receive-feedback.md) |
-| Act on a Goal's Autonomy and review whether to stop | [Continue autonomously](references/auto-mode/continue.md) |
+| Act on the Root's Autonomy and review whether to stop | [Continue autonomously](references/auto-mode/continue.md) |
 
 Reuse the stable CLI prefix and selected connection interface from setup or
 incoming feedback. The interface owns harness-specific operations and confirmation;

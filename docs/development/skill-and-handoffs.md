@@ -1,7 +1,7 @@
 ---
 keyPoints: >-
   The Skill owns experience and decision guidance; action references hold conditional
-  detail. Feedback points to the packaged entry; the end-of-turn check for a Goal's Autonomy
+  detail. Feedback points to the packaged entry; the end-of-turn check for a Root's Autonomy
   directly selects its combined continuation and stopping-review guide. Both use current Goal data.
 ---
 
@@ -52,14 +52,14 @@ for that separate development topic.
 
 ```text
 Web feedback → CLI delivery → current context + packaged Skill entry
-End of turn (Autonomy) → observed facts + Goals with their levels + auto-mode/continue.md
+End of turn (Autonomy) → observed facts + Roots with their levels + auto-mode/continue.md
 Agent → selected action guide → work → Deliverable / Comment / Letter
 ```
 
 Setup records the entry (`SKILL.md`) that the starter passes. The CLI uses that
 path; it does not know chill-agent's reference names, except that the end-of-turn
 check selects `references/auto-mode/continue.md` beside that entry. The request
-names the conversation's Goals at Lv 2 or higher with what each level asks, so
+names the conversation's Roots above Normal, by level name, with what each level asks, so
 the guide holds one short table of the levels and the judgment they share. It
 combines choosing useful work and checking a decision to stop, so the CLI sends
 one request per meaningful revision. A plain CLI without a guide keeps a minimal
