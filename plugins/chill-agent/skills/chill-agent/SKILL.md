@@ -33,7 +33,7 @@ in the user's language, including exchanges that began in chat. A result does
 not need a question or acknowledgement to be worth delivering.
 
 Completion depends on the agreed outcome and actual evidence, not an ended run
-or completed children alone. Each Goal's **Autonomy** (Lv 1 to 4) says how far
+or completed children alone. Each Goal's **Autonomy** (Lv 1 to 3) says how far
 to go without the user; at Lv 1, finish the entrusted request and use the
 conversation to shape what follows. No level expands scope or undoes a pause.
 When the outcome is achieved and delivered, let it rest.
