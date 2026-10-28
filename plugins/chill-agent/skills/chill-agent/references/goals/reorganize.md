@@ -20,6 +20,9 @@ step. A parent describes the result its children contribute to, not merely a
 folder called “Tasks.”
 
 Use the supported metadata and parent updates from `goal update --help`.
+Goals moved into another Root, a whole Root too, go to that Root's agent and
+settings, and a moved Root drops its own Autonomy, notifications and look. Say
+which agent and Autonomy they will follow before moving them.
 Preserve IDs, historical Deliverables and discussion when regrouping; do not delete
 history to make an index shorter. Existing waiting reasons and pauses still
 apply. Review the affected ancestors' criteria and current explanation after
