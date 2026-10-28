@@ -1,28 +1,31 @@
 ---
 keyPoints: >-
   Deliver what the user needs to receive, with enough context to use or decide.
-  Letters ask for necessary replies; Comments carry results and progress. One
-  message per response: questions that come with a reply go at its end. Work
-  moved to a Split Goal is discussed there; the parent gets one pointer.
+  A message that asks the user to decide or approve something carries --ask and
+  appears as a Letter; any other message is a Comment. One message per
+  response. Work moved to a Split Goal is discussed there; the parent gets one pointer.
 ---
 
 # Send a message
 
-Use a Letter only when the user needs to answer, choose or grant permission.
-Use a Comment for requested findings, completed artifacts and progress. Do not turn a report into a question or
-ask for acknowledgement just to leave a Letter open.
+If your message asks the user to decide or approve something, add
+`--ask '<what to decide>'`; it then appears as a Letter. Any other message is a
+Comment. Post either with `connection reply` in a Claude conversation, otherwise
+with `goal comment`.
+
+The Letters menu should show only what the user still has to decide: a Letter
+waits there until they next comment on the Goal, and the Web may notify their
+devices of it. So do not add a question to a report just to make it a Letter, and
+withdraw a Letter whose question is no longer needed with `goal close-letter`.
 
 Lead with the result, evidence, artifact link and limitations needed to use it.
 For a real decision, show what the proposal changes, its current and finished
 form, with your recommendation and what the answer changes. Check recent
-Conversation, including answered and closed Letters, to avoid repeating either a
-report or an existing question.
-A result already delivered in a Comment needs no replacement Letter.
+Conversation so you do not repeat a report, a question still open in a Letter,
+or one the user has answered.
 
-Send one message per response. The user reads the newest message first and can
-miss one above it, so when a reply to feedback also needs an answer, put the
-questions at the end of that reply instead of sending a separate Letter. Use a
-Letter for a question that stands on its own.
+Send one message per response, questions included: the user reads the newest
+message first and can miss one above it.
 
 For a consequential choice that belongs to the user, investigate available facts
 and prepare enough authorized work to make your recommendation concrete. Explain
@@ -32,9 +35,8 @@ record that assumption and continue. A Letter is not permission, but neither is
 it a pause on everything. Keep explicit waits and missing authorization limited
 to their actual dependencies.
 
-Save beside the Goal with `goal letter --title ...` or `goal comment`, using
-`--text-file` for longer messages and installed help for syntax. Verify the saved
-event. Progress stays in Conversation; saving a message changes
+Use `--text-file` for longer messages and installed help for syntax. Check the
+printed line. Progress stays in Conversation; saving a message changes
 neither work selection nor Goal completion.
 
 For a saved Letter, use `settings notice --id <goal> --event <event>` with the
@@ -49,8 +51,8 @@ notification preferences as part of reporting.
 Reply where the work is. When a request moves into a Split Goal, continue the
 conversation in that Goal, beside its Deliverable, and leave the parent one short
 Comment that names it (Goal #N) instead of answering in both. Answer later
-feedback on the parent about that work in the Split Goal as well, and close it on
-the parent with the same one-line pointer, since only a Comment there answers it.
+feedback on the parent about that work in the Split Goal as well, and reply on
+the parent with the same one-line pointer, since only a reply there answers it.
 
 Continue authorized work without waiting for an answer that it does not need.
 An end-of-turn check with no new outcome or remaining work ends with one short

@@ -36,8 +36,10 @@ adjust their contrast. Images and authored HTML Deliverables retain their origin
 
 ## Answer the questions that matter
 
-A Letter is a question that needs your decision. Reply to the Letter when you
-are ready. Other work within the agreement can continue while that question is
+A Letter is a question that needs your decision. Reply on its Goal when you
+are ready. Your next comment there, or an annotation on the Letter, takes the
+Letter off the Letters menu, even if the comment is about something else; if that
+did not answer the question and the agent still needs the answer, it asks again. Other work within the agreement can continue while that question is
 waiting. Answering does not mean that the entire project is finished.
 
 Comments share information or results without asking for a reply. Look for the

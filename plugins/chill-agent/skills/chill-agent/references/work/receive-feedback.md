@@ -16,8 +16,8 @@ itself require switching tasks.
 Use the verified connection interface. For
 an independent later request, defer only when durable deferment is supported
 and confirmed. Otherwise retain it in the work plan for the next checkpoint.
-Skip completed input. Feedback has no claim or completion step: a Comment on
-its Goal answers it. Do not promise redelivery or enqueue another copy of it.
+Skip completed input. Feedback has no claim or completion step: a reply on its
+Goal, with or without `--ask`, answers it. Do not promise redelivery or enqueue another copy of it.
 Answering feedback does not select work or complete Goals.
 
 On resumption, use the short Goal index and current context to find the gap
@@ -28,9 +28,9 @@ progress when only a reversible detail is undecided. Record the assumption and
 what an answer would change. Do not infer missing permission from silence.
 
 Reflect changed agreement in the Goal, [update the Deliverable](../deliverables/update.md) when the final
-output changes, and deliver requested outcomes
-in Comments. Use a Letter only when a user reply, choice or permission is needed.
-A reply may close a Letter's Web item automatically. Before a manual close,
-check whether further input is needed; closure does not prove authorization or
-completion. Resume what the reply actually enables. Reopen a Done Goal for
+output changes, and deliver requested outcomes as
+[Send a message](../messages/send.md) describes. A user comment
+closes every open Letter on its Goal, whatever it says, so a closed Letter proves
+neither an answer nor permission: resume what the comment actually enables, and
+in your reply ask again any question the work still needs answered. Reopen a Done Goal for
 newly agreed work or a real omission, not an informational follow-up alone.
