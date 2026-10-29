@@ -10,8 +10,8 @@ keyPoints: >-
 
 If your message asks the user to decide or approve something, add
 `--ask '<what to decide>'`; it then appears as a Letter. Any other message is a
-Comment. Post either with `connection reply` in a Claude conversation, otherwise
-with `goal comment`.
+Comment. Post either with `goal reply --id <GOAL>`, the same in every agent
+conversation.
 
 The Letters menu should show only what the user still has to decide: a Letter
 waits there until they next comment on the Goal, and the Web may notify their
