@@ -29,8 +29,8 @@ For command formats, Goal storage, runtime updates or the extension API, use the
 [CLI documentation](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/README.md).
 Its installed `--help` describes the commands your version supports.
 
-These pages describe current source. The skill's `cli.json` selects the CLI, so
-newer CLI screens appear only after `cli.json` adopts them. Host setup, runtime
+These pages describe current source. The skill's `chill-agent.json` selects the CLI, so
+newer CLI screens appear only after `chill-agent.json` adopts them. Host setup, runtime
 behavior and extension internals are documented in the CLI repository.
 
 Public guides are tracked in Git. Older local investigations may be retained in

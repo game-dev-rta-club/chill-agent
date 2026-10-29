@@ -1,15 +1,15 @@
 ---
 keyPoints: >-
   Install the chill-agent skill folder for either host, then invoke it in the
-  target project. Its starter fetches the CLI named in cli.json with npx and runs
+  target project. Its starter fetches the CLI named in chill-agent.json with npx and runs
   setup. The agent prepares an initial Goal and opens Web. Pulling a changed
-  cli.json switches Web to that CLI.
+  chill-agent.json switches Web to that CLI.
 ---
 
 # Install and invoke the skill
 
-Install the complete **`chill-agent`** skill folder, including `cli.json` and
-`scripts/start.mjs`. It contains no application code or node_modules. `cli.json`
+Install the complete **`chill-agent`** skill folder, including `chill-agent.json` and
+`scripts/start.mjs`. It contains no application code or node_modules. `chill-agent.json`
 names the CLI; the starter fetches it with npx on first invocation.
 Do not copy SKILL.md alone.
 
@@ -35,7 +35,7 @@ the skill does not silently move their Goals to a different project.
 The first invocation follows this sequence:
 
 1. **Check this computer.** The agent checks Node.js 24.15+ and npm, plus Git when
-   `cli.json` names a commit, before downloading the CLI. It also checks `cloudflared`, which is
+   `chill-agent.json` names a commit, before downloading the CLI. It also checks `cloudflared`, which is
    needed for a phone or public link. If a tool is missing or unusable, it explains
    what it does and asks before installing or repairing it. You can choose local
    use without cloudflared. Installing it does not turn on public access.
@@ -76,14 +76,21 @@ and [Claude Code skills](https://code.claude.com/docs/en/skills).
 
 ## Where the CLI lives and how it updates
 
-The starter passes the `package` value in `cli.json` to npx unchanged. It is
+The starter passes the `package` value in `chill-agent.json` to npx unchanged. It is
 normally a CLI release archive URL, or a pushed CLI commit while a team tries an
 unreleased version. npm builds a commit on first install, which can take about a
 minute; later runs reuse npm's cache. Setup copies the CLI into the project's
-data store and remembers where `cli.json` is. Nothing is written to the project's
+data store and remembers where `chill-agent.json` is. Nothing is written to the project's
 Git tree, and data and settings stay where they are.
 
-When a pull or skill reinstall changes `cli.json`, the next Web start fetches
+Skills up to 0.5.1 named this file `cli.json`. A project set up with one
+still records that path, and a Web running CLI 0.5.1 or older keeps its current
+version once the reinstalled skill holds only `chill-agent.json`. Ask the agent
+to run the skill's starter, `scripts/start.mjs`, once as on first use: its setup
+records the new file, and updates follow it again. Later CLIs read the new file
+in that case by themselves.
+
+When a pull or skill reinstall changes `chill-agent.json`, the next Web start fetches
 and prepares that CLI before starting. A Web that is already open on the
 supported macOS setup shows an update icon in its top menu. Click it to see
 “chill restarts with the new version.” Choose **OK** to prepare the new

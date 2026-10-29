@@ -40,7 +40,7 @@ node '<skill-directory>/scripts/start.mjs' --harness '<calling-harness-id>' --pr
 ```
 
 It checks Node.js 24.15+, npm and, for a git-based CLI, Git, then fetches the CLI
-named in the skill's `cli.json` and runs its setup. If a tool is missing, explain
+named in the skill's `chill-agent.json` and runs its setup. If a tool is missing, explain
 its purpose and the specific installation you propose, and obtain the user's
 agreement before installing or repairing it; then rerun. `cloudflared` is needed
 only for a phone or public link: offer installation or local-only use when that
@@ -60,7 +60,7 @@ native activation; `connectionVerified:false` is not evidence that approval is
 required. Native trust remains the user's decision.
 
 Do not give the user a setup command list. An incomplete installation needs the
-complete skill folder with its `cli.json`, not a different harness or another CLI.
+complete skill folder with its `chill-agent.json`, not a different harness or another CLI.
 Prepare the initial Goal from the supplied outcome, or the interface's discovery
 starter and welcome when the user only asks to begin. Open that page using the host
 browser tool before asking a question or ending the turn. If native activation
