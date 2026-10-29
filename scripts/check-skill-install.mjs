@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// End-to-end check: the skill's starter fetches the CLI named in cli.json and
+// End-to-end check: the skill's starter fetches the CLI named in chill-agent.json and
 // completes setup in a disposable project and data directory. It needs network
 // access and starts no server.
 import {spawnSync} from 'node:child_process';
@@ -23,7 +23,7 @@ try{
  if(result.error)throw Error(`Starter did not finish: ${result.error.message}`);
  if(result.status!==0)throw Error(`Starter failed (${result.status}):\n${result.stderr}`);
  const setup=JSON.parse(result.stdout);
- const expected=JSON.parse(await readFile(join(skill,'cli.json'),'utf8')).package;
+ const expected=JSON.parse(await readFile(join(skill,'chill-agent.json'),'utf8')).package;
  if(setup.package!==expected)throw Error(`Setup prepared ${setup.package}, expected ${expected}.`);
  if(!/session start --harness claude-code/.test(setup.next))throw Error('Setup did not name session start as the next step.');
  // PowerShell and cmd use chill.cmd on Windows; the sh entry is for Git Bash and macOS.

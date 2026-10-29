@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Install-free starter. It checks the tools needed to fetch the CLI, then lets
-// the CLI selected by ../cli.json set up the project. Everything after setup,
+// the CLI selected by ../chill-agent.json set up the project. Everything after setup,
 // including Web and the first Goal, belongs to that CLI.
 import {spawnSync} from 'node:child_process';
 import {existsSync,readFileSync} from 'node:fs';
@@ -12,9 +12,9 @@ const usage='Usage: node <skill>/scripts/start.mjs --harness <codex-desktop|clau
 
 export function setupArguments({harness,project,skillDirectory=skill}){
  if(!['codex-desktop','claude-code'].includes(harness))throw Error(`Specify the calling harness. ${usage}`);
- const versionFile=join(skillDirectory,'cli.json');
+ const versionFile=join(skillDirectory,'chill-agent.json');
  const spec=JSON.parse(readFileSync(versionFile,'utf8')).package;
- if(typeof spec!=='string'||!spec.trim())throw Error('cli.json must name the CLI package: {"package": "<npm package spec>"}.');
+ if(typeof spec!=='string'||!spec.trim())throw Error('chill-agent.json must name the CLI package: {"package": "<npm package spec>"}.');
  return {spec,args:['-y',spec,'setup','prepare','--isolated','--project',resolve(project),'--harness',harness,'--version-file',versionFile,'--agent-guide',join(skillDirectory,'SKILL.md')]};
 }
 
@@ -36,7 +36,7 @@ export function missingTools(spec,{version=process.versions.node,probe=command=>
  const [major,minor]=version.split('.').map(Number),missing=[];
  if(major<24||major===24&&minor<15)missing.push('Node.js 24.15 or later');
  if(!probe('npm'))missing.push('npm');
- if(/^(github:|git\+|git:|git@)/.test(spec)&&!probe('git'))missing.push('Git (cli.json selects a git commit)');
+ if(/^(github:|git\+|git:|git@)/.test(spec)&&!probe('git'))missing.push('Git (chill-agent.json selects a git commit)');
  return missing;
 }
 

@@ -23,5 +23,5 @@ jobs:
       - run: npm run release:check
       - run: npm ci
       - run: npm run check
-      - name: Install the CLI from cli.json through the skill starter
+      - name: Install the CLI from chill-agent.json through the skill starter
         run: npm run check:install

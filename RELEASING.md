@@ -1,7 +1,7 @@
 ---
 keyPoints: >-
   Release the skill from a reviewed version tag. Adopt a CLI release by setting
-  cli.json to its exact archive URL and passing the install check.
+  chill-agent.json to its exact archive URL and passing the install check.
 ---
 
 # Release the skill
@@ -33,7 +33,7 @@ consultation rule does not require asking again for the same action.
 
 When the complete experience needs a CLI change, select a published, reviewed
 CLI archive. Set its exact release URL as the `package` in the skill's
-`cli.json`, then run `npm run check` and `npm run check:install` in a
+`chill-agent.json`, then run `npm run check` and `npm run check:install` in a
 dependency-update PR. Do not ship a floating branch, a development commit or a
 personal local path. Keep dependency adoption separate from documentation-only edits.
 
@@ -59,7 +59,7 @@ registry install until a package has actually been published there.
 ## Update a running installation
 
 Follow the CLI's [runtime update guide](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/runtime/data-and-updates.md).
-A changed `cli.json` switches Web on its next start or through the update button.
+A changed `chill-agent.json` switches Web on its next start or through the update button.
 Afterwards verify Goals, held feedback and the monitor setting and history.
 Reinstall or reload the skill in the host when its instructions change.
 
