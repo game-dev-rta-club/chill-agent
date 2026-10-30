@@ -19,7 +19,7 @@ part you want to understand:
 | Open the workspace on your phone or keep a fixed URL | [Public link](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/using/public-link.md) |
 | Understand what the skill and the CLI each own | [Architecture](architecture.md) |
 | Change the skill, check it or select its CLI | [Skill and CLI](development/skill-and-cli.md) |
-| Change action guides or agent handoffs | [Skill and handoffs](development/skill-and-handoffs.md) |
+| Change agent guidance or handoffs | [Skill and handoffs](development/skill-and-handoffs.md) |
 | Check whether skill guidance leads to useful decisions | [Evaluate the skill](development/evaluating-the-skill.md) |
 | Try an unreleased CLI commit with this skill | [Use a development version](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/development/use-development-version.md) |
 | Choose branches, commit milestones and prepare a PR | [Development workflow](development/workflow.md) |

@@ -7,9 +7,9 @@ keyPoints: >-
 
 # Check whether the skill helps an agent decide
 
-Check that the selected action guide supplies its own decision context; record
-any extra reference reading the evaluator needs for the same action. A shorter
-file that requires a chain of readings is not a simpler interface.
+Check that the text the agent has when it acts, chill's messages, supplies the
+decision context; record any extra reading the evaluator needs. A shorter
+message that requires a chain of readings is not a simpler interface.
 
 The [core skill](../../plugins/chill-agent/skills/chill-agent/SKILL.md) should help
 an agent advance an agreed outcome while keeping the user's burden low. A valid

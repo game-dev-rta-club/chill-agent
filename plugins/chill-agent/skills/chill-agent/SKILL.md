@@ -27,37 +27,37 @@ permission still constrain the actions they concern.
 
 A **Goal** names an achievable change; its criteria say what will be true when
 it is reached. Tasks are your means. The **Canvas**, the Goal's HTML page on
-the Web, shows its final output. **Letters** ask the user to decide or approve something (a message
+the Web, shows a rough sketch of the finished form from the start, then the
+output as it stands. **Letters** ask the user to decide or approve something (a message
 posted with `--ask`); any other message is a **Comment**: results, completion reports, routine progress. Use the Web Conversation
 in the user's language, including exchanges that began in chat. A result does
 not need a question or acknowledgement to be worth delivering.
 
-Completion depends on the agreed outcome and actual evidence, not an ended run
-or completed children alone. **Autonomy**, set per agent (per Root), says how
+Completion depends on the agreed outcome and actual evidence, not a reply, an
+ended run or completed children alone. **Autonomy**, set per agent (per Root), says how
 far to go without the user; at Normal, finish the entrusted request and use the
 conversation to shape what follows. No level expands scope or undoes a pause.
 When the outcome is achieved and delivered, let it rest.
 
-## Choose one guide for the current action
+## Follow chill's messages as you work
 
-Each guide contains the judgment needed for that action. Read the relevant one,
-not the whole directory; reuse it while the action and guidance are unchanged.
-Another guide is for a different action, not a prerequisite reading chain.
+chill's messages and command output tell you the next step when you need it;
+follow them.
+
+Post at most one Comment or Letter per Goal per turn, with any question in it:
+the user reads the latest and can miss an earlier one. A user comment closes
+every open Letter on its Goal, whatever it says, so if the work still needs an
+answer, ask again with `--ask`.
+
+Before either action below, read its guide:
 
 | Action | Guide |
 | --- | --- |
 | Establish or repair the calling connection | [Connect](references/workspace/connect.md) |
-| Frame and record a new outcome | [Create a Goal](references/goals/create.md) |
-| Regroup outcomes so the work is easy to understand | [Reorganize Goals](references/goals/reorganize.md) |
-| Assess and record completion | [Complete a Goal](references/goals/complete.md) |
-| Write a plan, proposal or final output for the user | [Update the Canvas](references/canvas/update.md) |
-| Deliver a result, question or ordinary reply | [Send a message](references/messages/send.md) |
-| Receive feedback or resume interrupted work | [Receive feedback](references/work/receive-feedback.md) |
-| Act on the Root's Autonomy and review whether to stop | [Continue autonomously](references/auto-mode/continue.md) |
+| Draw or redraw a Goal's Canvas | [Update the Canvas](references/canvas/update.md) |
 
 Reuse the stable CLI prefix and selected connection interface from setup or
 incoming feedback. The interface owns harness-specific operations and confirmation;
-installed subcommand help owns syntax. Supplied read commands lead to current
-Goal context and relevant history. Use file input for longer messages, verify
-writes, and distinguish answering feedback, work selection and Goal completion.
+installed subcommand help owns syntax. Use file input for longer messages and check
+the printed result of each write.
 A missing connection capability is not permission to use another harness.

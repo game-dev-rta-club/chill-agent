@@ -15,7 +15,7 @@ Install it as it is; nothing is generated from it.
 | --- | --- |
 | `SKILL.md`, `references/` | Outcome and decision guidance for the agent |
 | `chill-agent.json` | `{"package": "<npm package spec>"}` naming the CLI to run |
-| `scripts/start.mjs` | Checks Node.js, npm and Git, then runs `npx -y <package> setup prepare --version-file <chill-agent.json> --agent-guide <SKILL.md>` |
+| `scripts/start.mjs` | Checks Node.js, npm and Git, then runs `npx -y <package> setup prepare --version-file <chill-agent.json>` |
 
 Everything after that call belongs to
 [chill-agent-cli](https://github.com/game-dev-rta-club/chill-agent-cli): Web,
