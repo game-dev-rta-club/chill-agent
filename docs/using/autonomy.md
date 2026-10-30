@@ -28,8 +28,8 @@ to hold work; Pause stops the end-of-turn requests too.
 ## When the agent hears about it
 
 - **At the end of a turn.** chill sends the conversation one message that lists
-  each Root it owns above Normal, by level name, with what that level asks. The
-  message links to the skill's `references/auto-mode/continue.md`.
+  each Root it owns above Normal, by level name, with what that level asks. It
+  ends with the rule for keeping Goals current.
 - **At tool requests (Claude).** A request is approved when the conversation
   owns a Root and every Root it owns is at Auto Continue or Ultra Continue.
   Questions the agent asks you and paused work are left to you.

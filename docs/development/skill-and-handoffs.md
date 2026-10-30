@@ -1,44 +1,47 @@
 ---
 keyPoints: >-
-  The Skill owns experience and decision guidance; action references hold conditional
-  detail. Feedback points to the packaged entry; the end-of-turn check for a Root's Autonomy
-  directly selects its combined continuation and stopping-review guide. Both use current Goal data.
+  What an agent must have in mind when it acts goes in chill's messages, which
+  arrive again each time; SKILL.md holds the experience, concepts and habits
+  read once; a guide only holds
+  long how-to that does not fit a line (Canvas, connect).
 ---
 
-# Maintain the skill and its handoffs
+# Maintain the skill and chill's messages
 
-Edit the [central Skill](../../plugins/chill-agent/skills/chill-agent/SKILL.md)
-for the desired experience and the small set of principles that guide decisions.
-The purpose is an outcome the user can enjoy without managing each step. Explain
+The skill and chill's messages aim at an outcome the user can enjoy without
+managing each step. Explain
 why a judgment matters so the agent can apply it to a new situation; a growing
 list of case-specific prohibitions is easy to miss and hard to maintain.
 
-## One action, one guide
+## Put guidance where the agent has it when it acts
 
-Organize `references/<subject>/<action>.md` around the action the agent is taking,
-not each safeguard or CLI command. The selected guide should be enough to judge
-and carry out that action, using current Goal facts, the verified runtime
-interface and installed command help. It should not require a chain of other
-references before the agent can decide. A new action can select its own guide.
+Agents rarely open a guide on their own, and what they read is gone once their
+conversation is compacted. Text that chill sends again with each message stays.
+So place each kind of text by when the agent needs it:
 
-For example, sending a message includes choosing Letter or Comment and handling
-its notification; it does not need separate reporting, delivery-review and
-notification readings. Continuing autonomously includes both continuing useful work and
-checking whether the outcome was delivered. Feedback includes interpreting a
-Letter reply and resuming the affected work. Separate Goal creation, regrouping
-and completion remain useful because each has a different result to produce.
+| Text | Place | Why |
+| --- | --- | --- |
+| A rule that must hold every time the agent touches a Goal | The CLI's messages: the Goal rule sentence printed at `goal create`, with each feedback message and in each end-of-turn (Keep going) message | It arrives again each time, also after compaction |
+| What the agent needs in one situation (how to reply, `--ask`, notification, what each Autonomy level asks, the next step after a command) | The message or command output for that situation | It arrives when the situation does |
+| The desired experience and the principles behind decisions; what Goals, Canvases, Letters, Comments and Autonomy are; habits whose loss after compaction costs little | [`SKILL.md`](../../plugins/chill-agent/skills/chill-agent/SKILL.md) | Read once, when a conversation joins chill |
+| Long how-to that does not fit a line | A guide: [Update the Canvas](../../plugins/chill-agent/skills/chill-agent/references/canvas/update.md), [Connect](../../plugins/chill-agent/skills/chill-agent/references/workspace/connect.md) | Often not opened, so what must hold also goes in a message, as the Canvas clause of the rule sentence does |
 
-Lead each page with that result and its purpose. Keep consequential boundaries
-such as scope, explicit pauses and missing authorization visible, with a compact
-example where it teaches the judgment. When a failure appears, first improve
-the purpose or distinction in the existing action guide. Add a file only for a
-separately selectable action, not to append one more check.
+The CLI owns the messages and the rule sentence (`lib/goal-rule.mjs` in
+chill-agent-cli). To change what agents do while working, change the text they
+have at that moment. Keep the rule sentence to what must hold every time: it is
+read again and again. Before adding a guide,
+check whether a line in a message would do.
 
-A small repeated principle is preferable to a mandatory reading hop, but detailed
-command syntax belongs in installed help and host differences in the runtime
-interface. A guide may point to a genuinely different next action; it must not
-hide prerequisites for its own decision behind that link. Review the whole
-entry table and callers when moving guidance, and remove superseded files.
+The user chose to print the rule sentence in these three places only. An agent
+at Normal Autonomy working on an existing Goal from a chat request, with no
+feedback, `goal create` or end-of-turn message, has the rule only if an earlier
+message is still in its context. The gap is accepted because users mostly work
+through Goal comments; measure it before adding a fourth place.
+
+A guide leads with its result and purpose. Detailed command syntax belongs in
+installed help, and host differences in the runtime interface. When you change
+or move guidance, change every place that states it (the CLI's messages,
+`SKILL.md` and its guide table, the guides), and remove superseded files.
 `node scripts/check-skill.mjs` validates reachability and links. The skill folder
 is distributed as it is, without a build. These checks do not establish that the
 purpose is understood.
@@ -48,23 +51,20 @@ asks the runtime for the selected interface; shared guides contain no host-speci
 receipt or activation rules. See the CLI's [harness boundaries](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/development/harness-boundaries.md)
 for that separate development topic.
 
-## Direct handoffs, current facts
+## What each message carries
 
 ```text
-Web feedback → CLI delivery → current context + packaged Skill entry
-End of turn (Autonomy) → observed facts + Roots with their levels + auto-mode/continue.md
-Agent → selected action guide → work → Canvas / Comment / Letter
+Web feedback → CLI delivery → current context + reply commands + Goal rule
+End-of-turn (Keep going) message → observed facts + Roots with their levels + Goal rule
+goal create → the new Goal + Goal rule
 ```
 
-Setup records the entry (`SKILL.md`) that the starter passes. The CLI uses that
-path; it does not know chill-agent's reference names, except that the end-of-turn
-check selects `references/auto-mode/continue.md` beside that entry. The request
+The CLI does not know the skill's files. The end-of-turn (Keep going) message
 names the conversation's Roots above Normal, by level name, with what each level asks, so
-the guide holds one short table of the levels and the judgment they share. It
-combines choosing useful work and checking a decision to stop, so the CLI sends
-one request per meaningful revision. A plain CLI without a guide keeps a minimal
-generic handoff. Scheduling, reservation and pause handling remain independent
-of guidance text.
+it stands on its own. One message covers both choosing useful work and checking
+a decision to stop; the CLI sends it once per meaningful revision: a user
+comment, a Goal or Canvas change, or a level change. Scheduling,
+reservation and pause handling remain independent of guidance text.
 
 `goal show --section context` uses the existing Goal reader. It retains scope,
 criteria, new input and question references while linking to Canvas and Letter

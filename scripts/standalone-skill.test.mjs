@@ -14,12 +14,12 @@ test('the skill ships chill-agent.json with exactly one npm package spec',async(
  assert.ok(typeof value.package==='string'&&value.package.trim()&&!/[\r\n]/.test(value.package));
 });
 
-test('the starter hands setup the version file and agent guide of its own skill',async t=>{
+test('the starter hands setup the version file of its own skill',async t=>{
  const dir=await mkdtemp(join(tmpdir(),'chill-starter-'));t.after(()=>rm(dir,{recursive:true,force:true}));
  await mkdir(join(dir,'skill'));await writeFile(join(dir,'skill/chill-agent.json'),JSON.stringify({package:'github:org/cli#abc'}));
  const {spec,args}=setupArguments({harness:'claude-code',project:dir,skillDirectory:join(dir,'skill')});
  assert.equal(spec,'github:org/cli#abc');
- assert.deepEqual(args,['-y','github:org/cli#abc','setup','prepare','--isolated','--project',dir,'--harness','claude-code','--version-file',join(dir,'skill/chill-agent.json'),'--agent-guide',join(dir,'skill/SKILL.md')]);
+ assert.deepEqual(args,['-y','github:org/cli#abc','setup','prepare','--isolated','--project',dir,'--harness','claude-code','--version-file',join(dir,'skill/chill-agent.json')]);
  assert.throws(()=>setupArguments({harness:'unknown',project:dir,skillDirectory:join(dir,'skill')}),/calling harness/);
  await writeFile(join(dir,'skill/chill-agent.json'),'{}');
  assert.throws(()=>setupArguments({harness:'codex-desktop',project:dir,skillDirectory:join(dir,'skill')}),/must name the CLI package/);

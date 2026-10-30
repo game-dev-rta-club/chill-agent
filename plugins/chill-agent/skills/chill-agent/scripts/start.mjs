@@ -15,7 +15,7 @@ export function setupArguments({harness,project,skillDirectory=skill}){
  const versionFile=join(skillDirectory,'chill-agent.json');
  const spec=JSON.parse(readFileSync(versionFile,'utf8')).package;
  if(typeof spec!=='string'||!spec.trim())throw Error('chill-agent.json must name the CLI package: {"package": "<npm package spec>"}.');
- return {spec,args:['-y',spec,'setup','prepare','--isolated','--project',resolve(project),'--harness',harness,'--version-file',versionFile,'--agent-guide',join(skillDirectory,'SKILL.md')]};
+ return {spec,args:['-y',spec,'setup','prepare','--isolated','--project',resolve(project),'--harness',harness,'--version-file',versionFile]};
 }
 
 // Windows cannot start npm's .cmd shims without a shell, which would split
