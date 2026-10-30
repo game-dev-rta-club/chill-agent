@@ -28,8 +28,8 @@ try{
  if(!/session start --harness claude-code/.test(setup.next))throw Error('Setup did not name session start as the next step.');
  // PowerShell and cmd use chill.cmd on Windows; the sh entry is for Git Bash and macOS.
  const help=process.platform==='win32'
-  ?spawnSync('cmd.exe',['/d','/s','/c',`""${join(dirname(setup.entry),'chill.cmd')}" connection --help"`],{encoding:'utf8',windowsVerbatimArguments:true})
-  :spawnSync(setup.entry,['connection','--help'],{encoding:'utf8'});
+  ?spawnSync('cmd.exe',['/d','/s','/c',`""${join(dirname(setup.entry),'chill.cmd')}" goal --help"`],{encoding:'utf8',windowsVerbatimArguments:true})
+  :spawnSync(setup.entry,['goal','--help'],{encoding:'utf8'});
  if(help.status!==0)throw Error(`The prepared entry does not run: ${help.stderr}`);
  console.log(`Skill install check passed: ${expected}`);
 }finally{

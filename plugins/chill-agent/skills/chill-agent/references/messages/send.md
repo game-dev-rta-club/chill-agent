@@ -49,7 +49,7 @@ Use installed help for syntax or current settings when needed; do not alter
 notification preferences as part of reporting.
 
 Reply where the work is. When a request moves into a Split Goal, continue the
-conversation in that Goal, beside its Deliverable, and leave the parent one short
+conversation in that Goal, beside its Canvas, and leave the parent one short
 Comment that names it (Goal #N) instead of answering in both. Answer later
 feedback on the parent about that work in the Split Goal as well, and reply on
 the parent with the same one-line pointer, since only a reply there answers it.
