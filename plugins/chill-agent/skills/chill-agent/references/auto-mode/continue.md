@@ -22,20 +22,20 @@ agreed scope or undoes a pause. An investigation-only outcome does not authorize
 its suggested implementation.
 
 Start with the remaining work the request names and a relevant Goal's current context. Read the
-Deliverable or discussion where it changes your understanding. Counts, Done labels
+Canvas or discussion where it changes your understanding. Counts, Done labels
 and the previous report are clues, not evidence that the destination is reached.
 If you would stop, consider what remains between the agreed outcome and the
 usable result, rather than finding more tasks merely to stay busy.
 
 An unanswered choice may affect only final placement or another reversible
-detail. Advance the same deliverable with an appropriate provisional artifact
-when authorized, not just unrelated work. Record the assumption, location and
+detail. Keep advancing the work that choice affects, with a provisional
+artifact where authorized, not only unrelated work. Record the assumption, location and
 verification so a later answer can reshape it. Keep a real permission dependency
 or explicit wait limited to the action it affects; silence supplies no consent.
 
 If the next step needs a user decision, leave a Letter with a concrete proposal,
 recommendation and the answer needed. Report results in a Comment, and
-[update the Deliverable](../deliverables/update.md) when the final output changes. Sending a report is
+[update the Canvas](../canvas/update.md) when the final output changes. Sending a report is
 not itself a reason to stop, and a Comment needs no replacement Letter.
 Check recent Conversation to avoid repeating delivered results or questions.
 When the agreed outcome is achieved, or the user explicitly wants an observation

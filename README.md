@@ -16,12 +16,12 @@ Describe what you want to achieve, agree on a direction, and let your agent get 
 | --- | --- | --- |
 | See the plan and progress | Comment right on the work | Pause, resume, or change direction |
 
-<p align="center"><img src="assets/workspace.png" alt="A Goal page showing its Deliverable, Conversation, and agent controls" width="900" /></p>
+<p align="center"><img src="assets/workspace.png" alt="A Goal page showing its Canvas, Conversation, and agent controls" width="900" /></p>
 
 ## A place to come back to
 
 - **Goals** describe the outcome. Larger jobs can be split into smaller Goals.
-- **Deliverables** show each Goal's final output, ready to read and comment on.
+- **Canvases** show each Goal's final output, ready to read and comment on.
 - **Conversation** keeps plans, progress and your feedback beside it.
 - **Letters** bring you questions that need your decision. A question or plan the agent would ask in its own app comes to you as a Letter instead.
 

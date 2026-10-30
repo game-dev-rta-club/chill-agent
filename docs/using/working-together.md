@@ -1,6 +1,6 @@
 ---
 keyPoints: >-
-  Agree on an outcome, read its Deliverable and leave feedback where it belongs.
+  Agree on an outcome, read its Canvas and leave feedback where it belongs.
   Letters bring decisions back to you; independent work can continue while you answer.
 ---
 
@@ -12,13 +12,13 @@ ready to release.” The agent helps turn that into a direction you can agree on
 
 ## Keep one place to return to
 
-The Goal holds the outcome. Its Deliverable shows the final output: the document,
+The Goal holds the outcome. Its Canvas shows the final output: the document,
 design or result it hands over. Plans and progress appear in Conversation. Larger
 pieces can have their own Goals, so a discussion about one part does not bury
 everything else.
 
-Read the Deliverable and leave feedback on the relevant text or image, or write in
-Conversation. Your feedback stays with that Goal. When the Deliverable changes, its
+Read the Canvas and leave feedback on the relevant text or image, or write in
+Conversation. Your feedback stays with that Goal. When the Canvas changes, its
 older versions and the discussion remain available.
 
 You can also change direction from the agent chat. Ask it to keep the Web
@@ -32,7 +32,7 @@ The choice is saved for the whole workspace and used on your other devices when
 they open or return to the page. Other projects keep their own choices.
 Status colors keep their meaning in every palette: Letters, waiting and running
 work are amber; answered Letters and completed Goals are green. Dark themes
-adjust their contrast. Images and authored HTML Deliverables retain their original colors.
+adjust their contrast. Images and authored HTML Canvases retain their original colors.
 
 ## Answer the questions that matter
 

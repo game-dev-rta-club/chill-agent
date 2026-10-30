@@ -11,7 +11,7 @@ keyPoints: >-
 | --- | --- |
 | Outcome, feedback and decision guidance for the agent | chill-agent skill |
 | Which CLI to run (`chill-agent.json`) | chill-agent skill |
-| Setup, Goal data, Deliverables, Conversation and Letters | CLI |
+| Setup, Goal data, Canvases, Conversation and Letters | CLI |
 | Web, native delivery and execution coordination | CLI |
 | Autonomy's end-of-turn checks and approvals, notifications, public link, first-use session and host guides | CLI (built-in extensions for the optional parts) |
 | Following a changed `chill-agent.json` on Web start or the update button | CLI |

@@ -35,7 +35,7 @@ to hold work; Pause stops the end-of-turn requests too.
   Questions the agent asks you and paused work are left to you.
 
 The end-of-turn message is sent once, then again only after something changes,
-such as your feedback, a Goal or Deliverable edit, or a level change. A turn with
+such as your feedback, a Goal or Canvas edit, or a level change. A turn with
 nothing left to do ends with one short line and posts nothing on the Web. Claude
 receives the message at the end of its response; for Codex, the Web server
 watches the chat every 30 seconds and queues it after the run has ended.

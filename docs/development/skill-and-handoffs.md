@@ -53,7 +53,7 @@ for that separate development topic.
 ```text
 Web feedback → CLI delivery → current context + packaged Skill entry
 End of turn (Autonomy) → observed facts + Roots with their levels + auto-mode/continue.md
-Agent → selected action guide → work → Deliverable / Comment / Letter
+Agent → selected action guide → work → Canvas / Comment / Letter
 ```
 
 Setup records the entry (`SKILL.md`) that the starter passes. The CLI uses that
@@ -67,7 +67,7 @@ generic handoff. Scheduling, reservation and pause handling remain independent
 of guidance text.
 
 `goal show --section context` uses the existing Goal reader. It retains scope,
-criteria, new input and question references while linking to Deliverable and Letter
+criteria, new input and question references while linking to Canvas and Letter
 bodies. No second summary store or inferred completion state is involved.
 
 ## Verify the format, then evaluate behavior
