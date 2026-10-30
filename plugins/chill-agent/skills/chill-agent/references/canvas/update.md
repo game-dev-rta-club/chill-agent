@@ -17,10 +17,12 @@ Use this when the Goal's final output, or a plan or proposal for the user, chang
    separate output belongs in a SubGoal.
 2. **Make it a static, visual-first HTML page.** Scripts do not run, so
    everything must show without them. Present one clear idea and one
-   meaningful relationship per screen, through varied diagrams (inline SVG),
-   tables and side-by-side comparisons, with only enough text to connect them
-   into an easy-to-grasp whole. A page of headings and bullets is Markdown in
-   HTML, not this.
+   meaningful relationship per screen, through varied tables, charts, diagrams
+   and side-by-side comparisons, with only enough text to connect them into an
+   easy-to-grasp whole. Build them in HTML, and use inline SVG only for shapes
+   without text, such as arrows: the user annotates by selecting text, and the
+   Web treats an SVG as one picture whose text cannot be selected. A page of
+   headings and bullets is Markdown in HTML, not this.
 3. **Start with the problem and the finished form.** Say what this Goal solves,
    then what the finished output is. **When something changes, show its current
    form and its finished form side by side and say what differs; do not list the
