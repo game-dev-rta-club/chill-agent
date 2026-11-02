@@ -26,7 +26,7 @@ source for supported options.
 3. For reception between responses, the agent keeps a reply waiter running as a
    Claude background task. chill's results ask it to start one when none runs.
 4. Resolve any required native tool approvals in Claude, or raise the Root's
-   [Autonomy](autonomy.md) to Auto Continue or Ultra Continue to have them approved. No level keeps
+   [Autonomy](autonomy.md) to Auto Continue or Never Stop to have them approved. No level keeps
    a closed Claude process alive.
 
 Keep a single receiving process for the conversation. If it is already running,

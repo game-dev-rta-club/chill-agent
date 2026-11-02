@@ -1,7 +1,7 @@
 ---
 keyPoints: >-
   Autonomy, set per agent (per Root), says how far the agent goes without you:
-  Normal, Auto Continue or Ultra Continue. A new conversation on a Root starts at Normal.
+  Normal, Auto Continue or Never Stop. A new conversation on a Root starts at Normal.
 ---
 
 # Choose how far the agent goes on its own
@@ -18,8 +18,8 @@ level before any agent works on a Root; the first agent on it takes it over.
 | Level | What it asks of the agent |
 | --- | --- |
 | Normal | Does what each comment asks, then waits for you. |
-| Auto Continue | Keeps working on what you've agreed, across the whole Root Goal. Questions come as Letters. No tool prompts. |
-| Ultra Continue | Plans its own way to the Root Goal's success criteria and moves every Goal under it forward. Letters only for your decisions. No tool prompts. Goals another live conversation is working on are left to it. |
+| Auto Continue | Carries out what you've agreed anywhere in the Root Goal and keeps its Goals up to date, finished ones marked Done. It suggests anything you haven't agreed to in the Goal instead of doing it. Questions come as Letters. No tool prompts. |
+| Never Stop | Plans its own way to the Root Goal's success criteria, reads whatever helps on the web and this machine (not secrets such as keys or private mail), and keeps going: it digs deeper wherever the criteria might not hold yet and checks what has changed each time it resumes. In Claude Code it always schedules its next check. Letters only for your decisions, including anything irreversible or beyond this workspace. No tool prompts. Goals another live conversation is working on are left to it. |
 
 To have the agent think more deeply or answer faster, tell it in your comment.
 No level widens what you agreed or undoes a pause. Use the agent's Pause control
@@ -28,10 +28,15 @@ to hold work; Pause stops the end-of-turn requests too.
 ## When the agent hears about it
 
 - **At the end of a turn.** chill sends the conversation one message that lists
-  each Root it owns above Normal, by level name, with what that level asks. It
-  ends with the rule for keeping Goals current.
+  each Root it owns above Normal, by level name, with what that level asks and
+  the Root's unfinished Goals. It ends with the rule for keeping Goals current.
+- **When a Never Stop turn would end (Claude).** While the conversation has no
+  scheduled check, chill keeps each turn from ending until the agent has
+  brought its Goals up to date and scheduled a check. Lowering the level, Pause
+  or a Done Root lets the turn end. If a check cannot be scheduled, the agent
+  says so on the Root and the turn stays held until you lower the level or pause. Codex has no scheduled checks, so this does not apply there.
 - **At tool requests (Claude).** A request is approved when the conversation
-  owns a Root and every Root it owns is at Auto Continue or Ultra Continue.
+  owns a Root and every Root it owns is at Auto Continue or Never Stop.
   Questions the agent asks you and paused work are left to you.
 
 The end-of-turn message is sent once, then again only after something changes,
@@ -44,7 +49,9 @@ watches the chat every 30 seconds and queues it after the run has ended.
 
 Autonomy replaces both switches. A Root whose AutoContinue was On starts at Auto
 Continue; all others start at Normal. Approve all is not carried over: set a Root
-to Auto Continue or Ultra Continue to have tool requests approved.
+to Auto Continue or Never Stop to have tool requests approved.
+
+Never Stop was called Ultra Continue until November 2026. Roots that were at Ultra Continue are now at Never Stop.
 
 Autonomy first had four levels, with Thorough between Normal and the level now
 named Auto Continue; Thorough became Normal. It was then set per Goal; once per

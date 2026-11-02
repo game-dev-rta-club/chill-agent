@@ -27,7 +27,7 @@ Describe what you want to achieve, agree on a direction, and let your agent get 
 
 Your agent uses the same workspace. You can shape the work as it goes, without having to repeat the whole conversation. Comments you send while it works wait for that work to end, and the Web shows when it is running, waiting on a check, paused or done.
 
-Want help keeping things moving? Raise the agent's [Autonomy](docs/using/autonomy.md) on a Root. At Auto Continue chill asks it, after each turn, to keep carrying out the work you agreed; at Ultra Continue the Root is delegated to it, and it asks only your decisions as Letters. You stay in control of what it takes on.
+Want help keeping things moving? Raise the agent's [Autonomy](docs/using/autonomy.md) on a Root. At Auto Continue chill asks it, after each turn, to keep carrying out the work you agreed in any of the Root's Goals; at Never Stop the Root is delegated to it, it finds what it needs on its own and keeps going, and it asks only your decisions as Letters. You stay in control of what it takes on.
 
 ## Get started
 
