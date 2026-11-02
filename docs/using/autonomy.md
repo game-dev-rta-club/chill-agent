@@ -29,7 +29,10 @@ to hold work; Pause stops the end-of-turn requests too.
 
 - **At the end of a turn.** chill sends the conversation one message that lists
   each Root it owns above Normal, by level name, with what that level asks and
-  the Root's unfinished Goals. It ends with the rule for keeping Goals current.
+  the Root's unfinished Goals. It asks the agent to work in focused turns, so each gets full attention: one
+  purpose per turn, ended once its results and the next approach are clear and
+  posted in a short Comment on the Goal. It ends with the rule for keeping
+  Goals current.
 - **When a Never Stop turn would end (Claude).** While the conversation has no
   scheduled check, chill keeps each turn from ending until the agent has
   brought its Goals up to date and scheduled a check. Lowering the level, Pause
@@ -45,8 +48,11 @@ to hold work; Pause stops the end-of-turn requests too.
   owns a Root and every Root it owns is at Auto Continue or Never Stop.
   Questions the agent asks you and paused work are left to you.
 
-The end-of-turn message is sent once, then again only after something changes,
-such as your feedback, a Goal or Canvas edit, or a level change. A turn with
+The end-of-turn message is sent once, then again only after something changes:
+your feedback, a Goal or Canvas edit (the agent's own included), or a level
+change. The agent's own Comment does not count, so after a turn that only posts
+one, the conversation waits for you or for a check the agent scheduled. A turn
+with
 nothing left to do ends with one short line and posts nothing on the Web. Claude
 receives the message at the end of its response; for Codex, the Web server
 watches the chat every 30 seconds and queues it after the run has ended.
