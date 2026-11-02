@@ -35,11 +35,12 @@ to hold work; Pause stops the end-of-turn requests too.
   brought its Goals up to date and scheduled a check. Lowering the level, Pause
   or a Done Root lets the turn end. If a check cannot be scheduled, the agent
   says so on the Root and the turn stays held until you lower the level or pause. Codex has no scheduled checks, so this does not apply there.
-- **When you change a level.** The agent is told once, at its next step, what
-  the new level asks. In Claude Code, checks it scheduled still wake it at their
-  time unless it cancels them; the notice lists them so it can cancel those it no
-  longer needs. An idle agent is told with your next comment or its next
-  scheduled check.
+- **When you change a level.** The agent is told once, at its next step (an
+  idle one with your next comment or its next scheduled check), and follows the
+  new level from then on. A lower level applies to work already under way: the
+  agent brings what it would no longer start to a point where it can be left
+  and says where it stands in a Comment. In Claude Code it is also asked to
+  cancel the checks it scheduled that it no longer needs; the rest still wake it.
 - **At tool requests (Claude).** A request is approved when the conversation
   owns a Root and every Root it owns is at Auto Continue or Never Stop.
   Questions the agent asks you and paused work are left to you.
