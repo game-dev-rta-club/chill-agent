@@ -49,6 +49,12 @@ the user reads the latest and can miss an earlier one. A user comment closes
 every open Letter on its Goal, whatever it says, so if the work still needs an
 answer, ask again with `--ask`.
 
+In a Comment or Letter, the Web turns references into links the user can open:
+write a Goal as `#12`, a comment as `C3`, a Letter as `L4` and one on another
+Goal as `#12 C3`. Copy the `C3` or `L4` chill prints; the eventId is for
+commands. Since `#12` opens Goal 12 of the chill you post to, write another
+chill's Goal as `Goal 50`, without `#`.
+
 Before either action below, read its guide:
 
 | Action | Guide |
