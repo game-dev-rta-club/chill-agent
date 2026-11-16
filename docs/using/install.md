@@ -91,13 +91,14 @@ records the new file, and updates follow it again. Later CLIs read the new file
 in that case by themselves.
 
 When a pull or skill reinstall changes `chill-agent.json`, the next Web start fetches
-and prepares that CLI before starting. A Web that is already open on the
-supported macOS setup shows an update icon in its top menu. Click it to see
-“chill restarts with the new version.” Choose **OK** to prepare the new
-version and restart at the same page, or **Cancel** to keep the current one.
-If preparation fails, the current Web keeps running. Public links, foreground
-servers and Windows do not offer this restart button. A program rollback does
-not undo a database migration.
+and prepares that CLI before starting. To restart a Web that runs in the background
+(launchd on macOS, Task Scheduler on Windows), press **Update** in its top menu
+(reload the page if it is missing), also on a device connected through the public
+link, and confirm. It prepares the new version and returns to the same page; if
+preparation fails, the current version keeps running. The restart interrupts the
+conversations using that Web, so choose a quiet moment. A Web started in the
+foreground has no Update button; stop it and start it again. A program rollback
+does not undo a database migration.
 
 See the CLI [version file contract](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/runtime/version-file.md)
 for the details.
