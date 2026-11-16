@@ -23,11 +23,14 @@ bump rationale, compatibility impact, CLI version and limitations in the Changel
 Never overwrite a release/tag; corrections get a new version. Develop integrations
 retain their commit identity without consuming a release number every time.
 
-Integrate release preparation into develop, promote develop to main with a checked
-PR. Prefer a merge commit when permitted; when protected main requires squash,
+Integrate release preparation into develop, then promote develop to main with a
+checked PR from `promote/<version>`, a new branch at develop's tip. Merging a PR in
+this repository deletes its head branch, so never open one from develop, main or
+another branch you keep. Prefer a merge commit when permitted; when protected main requires squash,
 keep that rule and immediately merge main back into develop, checking identical
-trees and restored ancestry. An explicit user request to publish authorizes that release; the general
-consultation rule does not require asking again for the same action.
+trees and restored ancestry, then push it to develop directly, not through a PR. An explicit
+user request to publish authorizes that release; the general consultation rule does
+not require asking again for the same action.
 
 ## Adopt a CLI release
 
