@@ -28,7 +28,7 @@ external contributions follow maintainer review.
 
 Use Node.js 24 and Git. Codex Desktop is supported on macOS; Claude Code on macOS
 and Windows.
-This repository is the skill and its `cli.json`; there is nothing to build.
+This repository is the skill and its `chill-agent.json`; there is nothing to build.
 
 ```sh
 git clone https://github.com/game-dev-rta-club/chill-agent.git
@@ -39,11 +39,11 @@ npm run check:install
 ```
 
 Run focused tests while developing, then the full check before your pull request.
-`check:install` needs network access; it fetches the CLI named in `cli.json` and
+`check:install` needs network access; it fetches the CLI named in `chill-agent.json` and
 runs setup in a disposable directory. CI runs both checks on macOS and Windows.
 
 See [Skill and CLI](docs/development/skill-and-cli.md) before editing the skill
-or `cli.json`. Program changes belong in
+or `chill-agent.json`. Program changes belong in
 [chill-agent-cli](https://github.com/game-dev-rta-club/chill-agent-cli).
 
 ## Documentation ownership

@@ -1,7 +1,7 @@
 ---
 keyPoints: >-
   Agree on an outcome and return to one workspace for plans, feedback and decisions.
-  Start with the complete skill; AutoContinue and notifications are optional.
+  Start with the complete skill; Autonomy levels and notifications are optional.
 ---
 
 <p align="center"><img src="assets/overview.svg" alt="chill-agent: agree on a goal, let the agent work, review the result" width="100%" /></p>
@@ -16,18 +16,18 @@ Describe what you want to achieve, agree on a direction, and let your agent get 
 | --- | --- | --- |
 | See the plan and progress | Comment right on the work | Pause, resume, or change direction |
 
-<p align="center"><img src="assets/workspace.png" alt="A Goal page showing its Deliverable, Conversation, and agent controls" width="900" /></p>
+<p align="center"><img src="assets/workspace.png" alt="A Goal page showing its Canvas, Conversation, and agent controls" width="900" /></p>
 
 ## A place to come back to
 
 - **Goals** describe the outcome. Larger jobs can be split into smaller Goals.
-- **Deliverables** show each Goal's final output, ready to read and comment on.
+- **Canvases** show each Goal's final output, ready to read and comment on.
 - **Conversation** keeps plans, progress and your feedback beside it.
 - **Letters** bring you questions that need your decision. A question or plan the agent would ask in its own app comes to you as a Letter instead.
 
 Your agent uses the same workspace. You can shape the work as it goes, without having to repeat the whole conversation. Comments you send while it works wait for that work to end, and the Web shows when it is running, waiting on a check, paused or done.
 
-Want help keeping things moving? Turn on [AutoContinue](docs/using/auto-continue.md). After the agent's run ends, chill-agent asks it to pick up any agreed work it can continue. You stay in control of what it takes on.
+Want help keeping things moving? Raise the agent's [Autonomy](docs/using/autonomy.md) on a Root. At Auto Continue chill asks it, after each turn, to keep carrying out the work you agreed in any of the Root's Goals; at Never Stop the Root is delegated to it, it finds what it needs on its own and keeps going, and it asks only your decisions as Letters. You stay in control of what it takes on.
 
 ## Get started
 
@@ -37,9 +37,9 @@ that project's workspace and opens its Web page; there is no separate setup
 command for you to run.
 
 The same folder works in **Codex Desktop** on macOS and in **Claude Code** (the Desktop app or the CLI) on macOS and Windows.
-Node.js 24.15 or newer and npm are required (Git too while `cli.json` names a
+Node.js 24.15 or newer and npm are required (Git too while `chill-agent.json` names a
 CLI commit); first use needs network access. The skill fetches the CLI named in
-its `cli.json` with npx. See [Install the skill](docs/using/install.md) for
+its `chill-agent.json` with npx. See [Install the skill](docs/using/install.md) for
 locations and how to obtain the folder. Initial native Hook approval may still be required; Claude may
 also need to resume the same conversation to activate its connection. The agent
 explains only the remaining native step.

@@ -1,6 +1,6 @@
 ---
 keyPoints: >-
-  Agree on an outcome, read its Deliverable and leave feedback where it belongs.
+  Agree on an outcome, read its Canvas and leave feedback where it belongs.
   Letters bring decisions back to you; independent work can continue while you answer.
 ---
 
@@ -12,13 +12,13 @@ ready to release.” The agent helps turn that into a direction you can agree on
 
 ## Keep one place to return to
 
-The Goal holds the outcome. Its Deliverable shows the final output: the document,
+The Goal holds the outcome. Its Canvas shows the final output: the document,
 design or result it hands over. Plans and progress appear in Conversation. Larger
 pieces can have their own Goals, so a discussion about one part does not bury
 everything else.
 
-Read the Deliverable and leave feedback on the relevant text or image, or write in
-Conversation. Your feedback stays with that Goal. When the Deliverable changes, its
+Read the Canvas and leave feedback on the relevant text or image, or write in
+Conversation. Your feedback stays with that Goal. When the Canvas changes, its
 older versions and the discussion remain available.
 
 You can also change direction from the agent chat. Ask it to keep the Web
@@ -32,12 +32,14 @@ The choice is saved for the whole workspace and used on your other devices when
 they open or return to the page. Other projects keep their own choices.
 Status colors keep their meaning in every palette: Letters, waiting and running
 work are amber; answered Letters and completed Goals are green. Dark themes
-adjust their contrast. Images and authored HTML Deliverables retain their original colors.
+adjust their contrast. Images and authored HTML Canvases retain their original colors.
 
 ## Answer the questions that matter
 
-A Letter is a question that needs your decision. Reply to the Letter when you
-are ready. Other work within the agreement can continue while that question is
+A Letter is a question that needs your decision. Reply on its Goal when you
+are ready. Your next comment there, or an annotation on the Letter, takes the
+Letter off the Letters menu, even if the comment is about something else; if that
+did not answer the question and the agent still needs the answer, it asks again. Other work within the agreement can continue while that question is
 waiting. Answering does not mean that the entire project is finished.
 
 Comments share information or results without asking for a reply. Look for the
@@ -50,17 +52,16 @@ The same header works on your phone and computer. **Agent** shows the current
 run. **Letters**, beside Agent, opens unanswered Letters for the current Root
 and its children. Its envelope is muted at zero and highlighted with a count
 when Letters are waiting. On the Goals index it includes all Roots.
-**More** contains **Goals** navigation, Color theme, AutoContinue, Notifications and Public link.
+**More** contains **Goals** navigation, Color theme, Notifications and Public link.
 
 The Agent panel shows the current status and a link to the work Goal, without
 message bodies or a list of old runs. When the exact work Goal is unavailable,
 the link is labelled Root Goal. Use Pause or Resume beside Activity to control
 supported work.
-While manually paused, Auto mode sends no new continuation; Resume retains your
-Auto mode preference.
-The available controls depend on the connected harness and CLI version. Pausing
-work and disabling [AutoContinue](auto-continue.md) serve different purposes:
-one interrupts or holds work, while the other prevents future automatic checks.
+While manually paused, chill sends no end-of-turn request; Resume keeps the
+Root agent's [Autonomy](autonomy.md). The available controls depend on the connected
+harness and CLI version. Pausing holds work now, while lowering Autonomy to Normal
+stops future end-of-turn requests for that Root.
 
 Use **More** to set [notifications](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/using/notifications.md) or [phone access](https://github.com/game-dev-rta-club/chill-agent-cli/blob/main/docs/using/public-link.md).
 Each can be enabled independently; no separate setup skill is needed.

@@ -7,9 +7,9 @@ keyPoints: >-
 
 # Check whether the skill helps an agent decide
 
-Check that the selected action guide supplies its own decision context; record
-any extra reference reading the evaluator needs for the same action. A shorter
-file that requires a chain of readings is not a simpler interface.
+Check that the text the agent has when it acts, chill's messages, supplies the
+decision context; record any extra reading the evaluator needs. A shorter
+message that requires a chain of readings is not a simpler interface.
 
 The [core skill](../../plugins/chill-agent/skills/chill-agent/SKILL.md) should help
 an agent advance an agreed outcome while keeping the user's burden low. A valid
@@ -28,7 +28,7 @@ Keep questions and expected decisions in a separate author-side record, written
 before collecting answers. Cover both initiative and restraint: shaping an
 unclear goal, making delegated choices, asking an asynchronous question,
 respecting authorization, interpreting feedback, verifying completion and
-responding to AutoContinue.
+responding to an Autonomy end-of-turn request.
 
 Include situations that start with the user's conversation, before any Goal or
 success criteria exist. Let the evaluator frame the outcome and choose the next
@@ -78,7 +78,7 @@ instructions alone.
 ## Report what the exercise establishes
 
 Keep prompts, raw answers, judgments and revision reasons in the work record;
-share the useful conclusions in the Goal's Deliverable. Distinguish repeated questions
+share the useful conclusions in the Goal's Canvas. Distinguish repeated questions
 from unseen scenarios. Report the number of trials and any unresolved mistakes.
 A small Q&A exercise checks proposed decisions, not real tool execution or a
 statistical success rate. Without a comparison condition, it also cannot measure
